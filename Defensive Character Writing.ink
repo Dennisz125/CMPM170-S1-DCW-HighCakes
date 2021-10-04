@@ -1,1 +1,1 @@
-Inital File for Defensive Character Writing
+Initial File for Defensive Character Writing
