@@ -1,3 +1,14 @@
+INCLUDE Blender
+INCLUDE Microwave
+INCLUDE Butler
+INCLUDE Host
+INCLUDE Fridge
+INCLUDE Exterminator
+
+
+
+
+
 //test commit --michelle
 //Player Knowledge States
 LIST RaccoonKnowledge= NotAware, OutsideInfluence, Dunnit
@@ -10,7 +21,7 @@ LIST Time = Six, Seven, Eight, Nine
 -> Kitchen
 ===Kitchen===
     You are in the kitchen. Where do you want to go?
-    *Blender 
+    *Blender ->Blender
     *Notebook ->NoteBook
     +Dining room ->DiningRoom
     
@@ -27,3 +38,5 @@ LIST Time = Six, Seven, Eight, Nine
     Here are all the clues you got so far
 
 -> Kitchen
+
+
