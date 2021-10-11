@@ -14,26 +14,26 @@ GhostKnowledge: {GhostKnowledge}
     
 ===SetRaccoonKnowledge===
 + [NotAware]
-    RaccoonKnowledge = RaccoonKnowledgeList.NotAware
+    ~RaccoonKnowledge = RaccoonKnowledgeList.NotAware
     ->DEBUG
 + [OutsideInfluence]
-    RaccoonKnowledge = RaccoonKnowledgeList.OutsideInfluence
+    ~RaccoonKnowledge = RaccoonKnowledgeList.OutsideInfluence
     ->DEBUG
 + [Dunnit]
-    RaccoonKnowledge = RaccoonKnowledgeList.Dunnit
+    ~RaccoonKnowledge = RaccoonKnowledgeList.Dunnit
     ->DEBUG
     
 ===SetBPlot===
 // None, Seance, Exorcist, Conclusion
 + [None]
-    BPlot = BPlotList.None
+    ~BPlot = BPlotList.None
     ->DEBUG
 + [Seace]
-    BPlot = BPlotList.Seance
+    ~BPlot = BPlotList.Seance
     ->DEBUG
 + [Exorcist]
-    BPlot = BPlotList.Exorcist
+    ~BPlot = BPlotList.Exorcist
     ->DEBUG
 + [Conclusion]
-    BPlot = BPlotList.Conclusion
+    ~BPlot = BPlotList.Conclusion
     ->DEBUG
