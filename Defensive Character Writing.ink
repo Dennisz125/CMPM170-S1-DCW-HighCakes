@@ -38,18 +38,30 @@ INCLUDE Exterminator
 
 
 ===Kitchen===
-    You are in the kitchen. Where do you want to go?
-    *Blender ->Blender
-    *Notebook ->NoteBook
-    +Dining room ->DiningRoom
+    You are in the kitchen
+    + [Talk to Blender]
+        ->Blender
+    + [Talk to Microwave]
+        ->Microwave
+    + [Talk to Fridge]
+        ->Fridge
+    + [Dining room] 
+        ->DiningRoom
     + [Foyer] 
         -> Foyer 
+    + [Open Notebook] 
+        -> NoteBook ->
 
     
     
 ===DiningRoom===
     You are in the dining room
-    +Kitchen -> Kitchen
+    + [Talk to Host]
+        ->Host
+    + [Inspect cake]
+        -> Cake
+    + [Kitchen]
+        ->Kitchen
 
 ->END
 
@@ -64,7 +76,12 @@ INCLUDE Exterminator
 
 ===NoteBook===
     Here are all the clues you got so far
+->->
+    
 
+===Cake===
+
+    ->DiningRoom
 -> Kitchen
 
 
