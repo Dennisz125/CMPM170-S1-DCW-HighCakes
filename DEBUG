@@ -1,0 +1,39 @@
+===DEBUG===
+DEBUG MENU
+RaccoonKnowledge: {RaccoonKnowledge}
+BPlot: {BPlot}
+GhostKnowledge: {GhostKnowledge}
++ [Set RaccoonKnowledge]
+   ->SetRaccoonKnowledge
++ [Set BPlot]
+    ->SetBPlot
++ [Return to Dining Room]
+    ->DiningRoom
++ [Return to kitchen]
+    ->Kitchen
+    
+===SetRaccoonKnowledge===
++ [NotAware]
+    RaccoonKnowledge = RaccoonKnowledgeList.NotAware
+    ->DEBUG
++ [OutsideInfluence]
+    RaccoonKnowledge = RaccoonKnowledgeList.OutsideInfluence
+    ->DEBUG
++ [Dunnit]
+    RaccoonKnowledge = RaccoonKnowledgeList.Dunnit
+    ->DEBUG
+    
+===SetBPlot===
+// None, Seance, Exorcist, Conclusion
++ [None]
+    BPlot = BPlotList.None
+    ->DEBUG
++ [Seace]
+    BPlot = BPlotList.Seance
+    ->DEBUG
++ [Exorcist]
+    BPlot = BPlotList.Exorcist
+    ->DEBUG
++ [Conclusion]
+    BPlot = BPlotList.Conclusion
+    ->DEBUG

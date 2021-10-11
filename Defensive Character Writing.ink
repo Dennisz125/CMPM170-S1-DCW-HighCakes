@@ -4,19 +4,20 @@ INCLUDE Butler
 INCLUDE Host
 INCLUDE Fridge
 INCLUDE Exterminator
+INCLUDE DEBUG
 
 -> Init 
 
-
 === Init === 
     // -- Player Knowledge States -- 
-    LIST RaccoonKnowledge= NotAware, OutsideInfluence, Dunnit
-    ~RaccoonKnowledge = RaccoonKnowledge.NotAware
+    LIST RaccoonKnowledgeList= NotAware, OutsideInfluence, Dunnit
+    VAR RaccoonKnowledge = RaccoonKnowledgeList.NotAware
+
+    LIST BPlotList= None, Seance, Exorcist, Conclusion
+    VAR BPlot = BPlotList.None
     
-    LIST BPlot= None, Seance, Exorcist, Conclusion
-    ~BPlot = BPlot.None
-    
-    LIST GhostKnowledge = NONE, Ghost, Demon
+    LIST GhostKnowledgeList = None, Ghost, Demon
+    VAR GhostKnowledge = GhostKnowledgeList.None
     
     LIST Time = Six, Seven, Eight, Nine
     // DELETE LATER quick way to test different time states 
@@ -50,7 +51,9 @@ INCLUDE Exterminator
     + [Foyer] 
         -> Foyer 
     + [Open Notebook] 
-        -> NoteBook ->
+        -> NoteBook
+    + [DEBUG]
+        ->DEBUG
 
     
     
@@ -58,11 +61,12 @@ INCLUDE Exterminator
     You are in the dining room
     + [Talk to Host]
         ->Host
+    + [Talk to Exterminator]
+        ->Exterminator
     + [Inspect cake]
-        -> Cake
+        ->Cake
     + [Kitchen]
         ->Kitchen
-
 ->END
 
 === Foyer ===
