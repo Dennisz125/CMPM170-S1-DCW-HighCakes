@@ -9,7 +9,7 @@ INCLUDE Exterminator
 
 
 === Init === 
-    //Player Knowledge States
+    // -- Player Knowledge States -- 
     LIST RaccoonKnowledge= NotAware, OutsideInfluence, Dunnit
     ~RaccoonKnowledge = RaccoonKnowledge.NotAware
     
@@ -19,17 +19,24 @@ INCLUDE Exterminator
     LIST GhostKnowledge = NONE, Ghost, Demon
     
     LIST Time = Six, Seven, Eight, Nine
+    // DELETE LATER quick way to test different time states 
+    // ~ Time += Six
+    // ~ Time += Seven
+    // ~ Time += Eight
+    // ~ Time += Nine
     
     //red herring for accusing appliances?
     
+    // -- Butler Variables --  
     // whether butler has been talked to 
-    // -DELETE EXPLANATION LATER- there is a built-in test for whether a knot has been visited, but this didn't work because the initial text still shows up after every time you ask him a question if it's the first time you enter that knot, which gets repetitive and it's a big block of text
     VAR butler_met = false
+    // times player selects hello option 
+    VAR butler_hello = 0
+    
+    // TODO divert to beginning of story 
     -> Kitchen
 
 
-
--> Kitchen
 ===Kitchen===
     You are in the kitchen. Where do you want to go?
     *Blender ->Blender
@@ -51,6 +58,8 @@ INCLUDE Exterminator
     Boy this sure is a foyer. 
     + [Talk to Butler]
         -> Butler
+    + [Go to Kitchen] 
+        -> Kitchen 
 
 
 ===NoteBook===
