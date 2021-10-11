@@ -1,4 +1,18 @@
 ===Butler===
-
-
-->DiningRoom
+   // TODO add stitches for different times, if dialogue should change based on the time of day  
+    
+    // code only runs when first talking to butler
+    {(not butler_met):
+        An imposing man stands with his back against the white walls of the foyer. I had nearly mistaken him for a statue until we briefly made eye contact. The gray bristles of his moustache appear to stick straight down, as if recently combed by a careful hand. 
+            ~ butler_met = true
+    
+    - else: 
+        The Butler stares down at me. I have a difficult time assessing whether he is annoyed with me or simply tired of the whole ordeal. 
+    }
+    
+    * [baba booboo?]
+        "bogos binted"
+        ++ -> Butler
+    
+    + [Return]
+    -> Kitchen
