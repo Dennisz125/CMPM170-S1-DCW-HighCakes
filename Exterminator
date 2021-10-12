@@ -2,3 +2,6 @@
 You are talking to Exterminator
 * Go back to Dining room
     ->DiningRoom
+
+===function GetExterminatorQuotes
+    ~return "{~What an excellent day for an exorcism.|What brings you to this nape of the woods, neck of the wape. How come you're here?|You got a lot of problems. You need help|There is nothing wrong with you, except in your mind|Do you tell me for a fact that an exorcism wouldn't do any good? You are SO wrong!|}"

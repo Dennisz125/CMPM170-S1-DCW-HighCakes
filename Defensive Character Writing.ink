@@ -16,7 +16,7 @@ INCLUDE DEBUG
     LIST BPlotList= None, Seance, Exorcist, Conclusion
     VAR BPlot = BPlotList.None
     
-    LIST GhostKnowledgeList = None, Ghost, Demon
+    LIST GhostKnowledgeList= None, Ghost, Demon
     VAR GhostKnowledge = GhostKnowledgeList.None
     
     LIST Time = Six, Seven, Eight, Nine
@@ -34,9 +34,15 @@ INCLUDE DEBUG
     // times player selects hello option 
     VAR butler_hello = 0
     
+    // -- Cake State: 0 is gone, 4 is full --
+    VAR CakeState = 4
+    
     // TODO divert to beginning of story 
-    -> Kitchen
+    ->Intro
 
+===Intro===
+Exterminator: {GetExterminatorQuotes()}
+->Kitchen
 
 ===Kitchen===
     You are in the kitchen
