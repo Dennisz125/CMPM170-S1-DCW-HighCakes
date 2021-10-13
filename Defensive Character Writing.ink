@@ -28,6 +28,8 @@ INCLUDE DEBUG
     // -- Butler Variables --  
     // whether butler has been talked to 
     VAR butler_met = false
+    // whether player has asked butler who he is 
+    VAR butler_who = false 
     // times player selects hello option 
     VAR butler_hello = 0
     
