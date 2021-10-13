@@ -29,12 +29,10 @@ INCLUDE DEBUG
     // -- Butler Variables --  
     // whether butler has been talked to 
     VAR butler_met = false
-<<<<<<< Updated upstream
     // whether player has asked butler who he is 
     VAR butler_who = false 
     // whether butler has been asked about host 
     VAR butler_host = false 
-=======
     // times player selects hello option 
     VAR butler_hello = 0
     
@@ -44,7 +42,6 @@ INCLUDE DEBUG
     VAR fridge_who = false 
     // whether fridge has been asked about host 
     VAR fridge_host = false 
->>>>>>> Stashed changes
     // times player selects hello option 
     VAR fridge_hello = 0
     
@@ -60,7 +57,7 @@ INCLUDE DEBUG
     
     
     //fridge variables
-    VAR fridge_met = false
+    //VAR fridge_met = false
     
     VAR kitchen_visited = false
     VAR foyer_visited = false
@@ -178,8 +175,6 @@ INCLUDE DEBUG
     
 
 ===ViewCake===
-<<<<<<< Updated upstream
-=======
     // None, Some, Blood, Trail, RaccoonIn
     {
         - Cake == CakeList.None:
