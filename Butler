@@ -1,11 +1,7 @@
 ===Butler===
 
-
-   // TODO add stitches for different times, if dialogue should change based on the time of day  
-   
-   
-    // possible questions: who are you, host, extorminator, cake 
-    // TODO should tell you about host being superstitious, suspicious about extorminator, aware that someting broke in 
+    // possible questions: seance, extorminator, cake 
+    // TODO should tell you about host being superstitious, suspicious about extorminator,  can choose to tell him that something broke in, update on cake 
     
     
     // ----INTRO ---- 
@@ -31,19 +27,32 @@
          "The evening has nearly concluded and yet you still remain ignorant as to my identity? And you fancy yourself a private investigator?"
         }
         The Butler stares down at me, sharpening a chef's knife that I assume originated from the kitchen. I have a difficult time assessing whether he is annoyed with me or simply tired of the whole ordeal. 
-        ++ -> Butler
+            ** [Name] "Haven't heard your name yet. Care to enlighten me?"
+                "I do not know why you insist upon asking questions in such a manner... But I will humor you. I am Bartholomew Murderman.
+                ...Aha. Of course, that last bit was a jest, detective. I digress. Most people simply refer to me as 'The Butler.' You may do the same." 
+            ~ butler_who = true 
+            +++ -> Butler
     
     
-    // -- NAME --
-    * [Name] "Haven't heard your name yet. Care to enlighten me?"
-        "I do not know why you insist upon asking questions in such a manner... But I will humor you. I am Bartholomew Murderman.
-        ...Aha. Of course, that last bit was a jest, detective. I digress. Most people simply refer to me as 'The Butler.' You may do the same." 
-        ++ -> Butler
+    // -- HOST -- 
+    * {butler_who} [Host] "So, uh, how well acquainted are you with Maximilian?"
+        "You're joking, yes? I am his butler, or have you already forgotten?"
+            ** [Party] "Do you know why Maximilian has prepared this gathering?" 
+            "Is it not obvious? He truly loves his dear friend... Kidding, of course. If you are so very interested in the truth, I might allow you to hear some of it. 
+            Sir Maximilian has become quite the paranoiac, seeing ghosts in his halls... But you shouldn't put so much stock in rumors, right, Detective? Why, after all, would you trust the butler?"
+            //TODO conditional, if player already has this info then theyre like "I knew that already blaH"
+            //TODO italics 
+            If he was having problems... why didn't he tell me about it?
+            //TODO update host plot, believes house is haunted 
+            +++ -> Butler 
+    
+    
+    // -- EXTORMINATOR -- 
     
     
     // -- CAKE -- 
-    // TODO how is the cake being tracked? when Time is empty, is the game taking place before the "body" is found?     
-    * {not Time} [Cake] "I heard from my friend that cake will be served."
+    //TODO once cake states are done something like "careful... red jelly is slippery, and the floor of the kitchen is so awfully hard and cold... Ah, and those heavy doors... its quite possible no one will hear a thing."
+    * {not Time and butler_who} [Cake] "I heard from my friend that cake will be served."
         "You are correct. 
         ...Were you expecting me to elaborate? Hmph. Very well. The cake has been created in Sir Maximilian's image. You should see it. It's quite... something."
         The Butler's eyes fall down to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
@@ -52,7 +61,7 @@
         
     
     // -- HELLO -- 
-    + [Hello] "Just saying hello."
+    + {butler_who} [Hello] "Just saying hello."
         {butler_hello < 2:
             "Do you truly enjoy my company so much? I'm flattered. But you have better things to do, don't you?"
             ~ butler_hello ++
@@ -62,6 +71,7 @@
             ~ butler_hello = 0
         }
         ++ -> Butler
+    
     
     // -- RETURN -- 
     + [-Return-]
