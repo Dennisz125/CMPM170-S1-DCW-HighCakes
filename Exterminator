@@ -1,6 +1,18 @@
 ===Exterminator===
-You are talking to Exterminator
-* Go back to Dining room
+x
+// --Intro--
+{not exterminator_met:
+        Discription of Exterminator
+            ~ butler_met = true
+    - else: 
+        Exterminator: Ugh... 
+}
+
+// --Who--
+* Who are you?
+    I'm a Exterminator! 
+    ->Exterminator
+* [Go back to Dining room]
     ->DiningRoom
 
 ===function GetExterminatorQuotes

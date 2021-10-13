@@ -18,6 +18,7 @@ INCLUDE DEBUG
     
     LIST CakeList = None, Some, Blood, Trail, RaccoonIn
     VAR Cake = CakeList.None
+    VAR CakeState = 4
     
     VAR Time = 1700 //Military time
     //Todo: Function to convert time
@@ -28,11 +29,6 @@ INCLUDE DEBUG
     // -- Butler Variables --  
     // whether butler has been talked to 
     VAR butler_met = false
-    // times player selects hello option 
-    VAR butler_hello = 0
-    
-    //fridge variables
-    VAR fridge_met = false
     // whether player has asked butler who he is 
     VAR butler_who = false 
     // whether butler has been asked about host 
@@ -51,12 +47,15 @@ INCLUDE DEBUG
     VAR exterminator_hello = 0
     
     
+    //fridge variables
+    VAR fridge_met = false
+    
     VAR kitchen_visited = false
     VAR foyer_visited = false
     VAR dining_visited = false
     
+    // TODO divert to beginning of story 
     ->Intro
-
 
 ===Intro===
     
@@ -160,41 +159,15 @@ INCLUDE DEBUG
                     ->Kitchen
     }
 
-===NoteBook(room)===
+===NoteBook===
     Here are all the clues you got so far.
-    ->ViewRaccoonKnowledge->
-    ->ViewCake->
     // Print out knowledge state
-    + [Close Notebook]
-        {
-        - room == Kitchen:
-            ->Kitchen
-        - room == DiningRoom:
-            ->DiningRoom
-        - room == Foyer:
-            ->Foyer
-        }
+->->
     
-===ViewCake===
-    {
-        - CakeState == 4:
-            Cake is Full
-        - CakeState == 3:
-            Cake lost some toppings
-        - CakeState == 2:
-            Cake lost some pieces
-        - CakeState == 1:
-            Cake is gone
-        }
-->->
 
-===ViewRaccoonKnowledge===
-    {
-        - RaccoonKnowledge == RaccoonKnowledgeList.NotAware:
-            Raccoon is not aware
-        - RaccoonKnowledge == RaccoonKnowledgeList.OutsideInfluence:
-            Raccoon is aware of Outside Influence
-        - RaccoonKnowledge == RaccoonKnowledgeList.Dunnit:
-            Raccoon is Dunnit
-    }
-->->
+===ViewCake===
+
+    ->DiningRoom
+-> Kitchen
+
+
