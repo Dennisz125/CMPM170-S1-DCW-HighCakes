@@ -1,4 +1,34 @@
 ===Host===
+//TODO: different intro depending on current Bplot state?
+//Host updates player on cake state? Or vice versa?
+
+//---Intro--- content should depend on Bplot state
+
+    + {BPlot == BPlotList.None}
+        Maximillian sits dejectedly at the dining table. As I approach he looks at me earnestly.
+    + {BPlot == BPlotList.Seance}
+        Maximillian has cleared some space at the table before him, eyes closed and quietly humming as he rests his hands on the planchette of an ancient looking Oujia board. I give him a quick tap on the shoulder to get his attention, making him jump nearly out of his seat. He turns sheepishly to greet me.
+    + {BPlot == BPlotList.Exorcist}
+        It seems that the 'Exorcist' has Maximillian convinced of a supernatural threat. Maximillian, burning sage and Bible in hand, is making rounds in the Dining Room, attempting to... well I'm not even sure what he'd be hoping to accomplish. As I catch his attention he quickly comes over, and douses me in pungent smoke. He waits for my coughing fit to end before he continues:
+ 
+    "Any word, old friend?"
+
+    //Final accusation, needs to send to conclusion, need conclusion.
+    * {RaccoonKnowledge == RaccoonKnowledgeList.Dunnit} [I know who the 'killer' is.]
+        "I've found out who the TRUE culprit is. It would seem you're overpaying your friend, the Exorterminator. A raccoon snuck into the house earlier this evening and fancied a piece of your treasured dessert."
+
+    //Update BPlot
+    *{BPlot == BPlotList.Seance}"Um... What's with the getup, Max?"
+    "A recommendation from my devoted Exorcist. I've had quite enough of these paranormal happenings, and he says that a touch of mysticism is exactly what we need!"
+    ~BPlot = BPlotList.Exorcist
+    
+    //CakeState
+    +{CakeState < 4} "I have bad news, Max..."
+    
+    
+    +"Nothing new yet, Max" -> Host
 
 
+//---Return---
++[-Return-]
 ->DiningRoom

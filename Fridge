@@ -1,10 +1,16 @@
 ===Fridge===
     //first time vs return text
     {(not fridge_met):
-        I'm starting to get hungry from all this detective work. Cant think on an empty stomach. I reached towards the handle as the extorminator
-            ~ fridge_met = true
+        I'm starting to get hungry from all this detective work. Cant think on an empty stomach. I reached towards the handle as the extorminator yells out "WAIT! I feel a prescence over there"
+        *[Hold on]
+            You hear a mechanical clunks and clanks as the machine whirrs to live. You don't believe in ghosts but could the extorminator actually be right? The fridge shakes back and forth as the extorminator chants incantations in a tongue you haven't heard of. This could change everything you knew about the material world. You could win awards! You could be the best detective in th-
+            **[A voice pops up from the box]
+                Hello, how may I assist you?
+                The extorminator is astonished by what 
+                ~ fridge_met = true
+                ->Fridge
     - else: 
-        How may assist you?
+        How may I assist you?
     }
 
-    ->DiningRoom
+    ->Kitchen
