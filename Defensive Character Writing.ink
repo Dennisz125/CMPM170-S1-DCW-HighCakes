@@ -35,6 +35,16 @@ INCLUDE DEBUG
     // times player selects hello option 
     VAR butler_hello = 0
     
+    // -- Exterminator Variables --  
+    // whether Exterminator has been talked to 
+    VAR exterminator_met = false
+    // whether player has asked Exterminator who he is 
+    VAR exterminator_who = false 
+    // whether Exterminator has been asked about host 
+    VAR exterminator_host = false 
+    // times player selects hello option 
+    VAR exterminator_hello = 0
+    
     
     // -- Cake State: 0 is gone, 4 is full --
     VAR CakeState = 4
@@ -63,7 +73,7 @@ Exterminator: {GetExterminatorQuotes()}
     + [Foyer] 
         -> Foyer 
     + [Open Notebook] 
-        -> NoteBook ->
+        -> NoteBook(Kitchen)
     + [DEBUG]
         ->DEBUG
 
@@ -79,6 +89,8 @@ Exterminator: {GetExterminatorQuotes()}
         ->Cake
     + [Kitchen]
         ->Kitchen
+    + [Open Notebook] 
+        -> NoteBook(DiningRoom)
 ->END
 
 === Foyer ===
@@ -88,17 +100,45 @@ Exterminator: {GetExterminatorQuotes()}
         -> Butler
     + [Go to Kitchen] 
         -> Kitchen 
+    + [Open Notebook] 
+        -> NoteBook(Foyer)
 
 
-===NoteBook===
+===NoteBook(room)===
     Here are all the clues you got so far.
+    ->ViewRaccoonKnowledge->
+    ->ViewCake->
     // Print out knowledge state
-->->
+    + [Close Notebook]
+        {
+        - room == Kitchen:
+            ->Kitchen
+        - room == DiningRoom:
+            ->DiningRoom
+        - room == Foyer:
+            ->Foyer
+        }
     
-
 ===ViewCake===
+    {
+        - CakeState == 4:
+            Cake is Full
+        - CakeState == 3:
+            Cake lost some toppings
+        - CakeState == 2:
+            Cake lost some pieces
+        - CakeState == 1:
+            Cake is gone
+        }
+->->
 
-    ->DiningRoom
--> Kitchen
-
-
+===ViewRaccoonKnowledge===
+    {
+        - RaccoonKnowledge == RaccoonKnowledgeList.NotAware:
+            Raccoon is not aware
+        - RaccoonKnowledge == RaccoonKnowledgeList.OutsideInfluence:
+            Raccoon is aware of Outside Influence
+        - RaccoonKnowledge == RaccoonKnowledgeList.Dunnit:
+            Raccoon is Dunnit
+    }
+->->
