@@ -30,6 +30,8 @@ INCLUDE DEBUG
     VAR butler_met = false
     // whether player has asked butler who he is 
     VAR butler_who = false 
+    // whether butler has been asked about host 
+    VAR butler_host = false 
     // times player selects hello option 
     VAR butler_hello = 0
     
@@ -45,7 +47,6 @@ INCLUDE DEBUG
     ->Intro
 
 ===Intro===
-
 Exterminator: {GetExterminatorQuotes()}
 ->Kitchen
 

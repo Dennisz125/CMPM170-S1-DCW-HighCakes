@@ -1,18 +1,14 @@
 ===Butler===
 
 
-   // TODO add stitches for different times, if dialogue should change based on the time of day  
-   
-   
-    // possible questions: who are you, host, extorminator, cake 
-    // TODO should tell you about host being superstitious, suspicious about extorminator, aware that someting broke in 
+    //TODO three cake convos, tell him something broke in 
     
     
     // ----INTRO ---- 
     
     
    // first time talking to butler
-    {(not butler_met):
+    {not butler_met:
         An imposing man stands with his back against the white walls of the foyer. I had nearly mistaken him for a statue until we briefly made eye contact. The gray bristles of his moustache appear to stick straight down, as if recently combed by a careful hand. 
             ~ butler_met = true
     - else: 
@@ -25,25 +21,55 @@
     
     // -- WHO --
     * [Butler] "Who are you?"
-        //{Time hasnt Eight and Time hasnt Nine: 
+        {CakeState > 1: 
         "Hoh hoh. Is it not clear? I am the butler of this estate. I thought it would be apparent to a pretend detective such as yourself."
         - else: 
          "The evening has nearly concluded and yet you still remain ignorant as to my identity? And you fancy yourself a private investigator?"
         }
         The Butler stares down at me, sharpening a chef's knife that I assume originated from the kitchen. I have a difficult time assessing whether he is annoyed with me or simply tired of the whole ordeal. 
-        ++ -> Butler
+        Whatever he is, he's wasting my time. I need to get down to business. 
+            ** [Name] "Haven't heard your name yet. Care to enlighten me?"
+                "I do not know why you insist upon asking questions in such a manner... But I will humor you. I am Bartholomew Murderman.
+                ...Aha. Of course, that last bit was a jest, detective. I digress. Most people simply refer to me as 'The Butler.' You may do the same." 
+            ~ butler_who = true 
+            +++ -> Butler
     
     
-    // -- NAME --
-    * [Name] "Haven't heard your name yet. Care to enlighten me?"
-        "I do not know why you insist upon asking questions in such a manner... But I will humor you. I am Bartholomew Murderman.
-        ...Aha. Of course, that last bit was a jest, detective. I digress. Most people simply refer to me as 'The Butler.' You may do the same." 
-        ++ -> Butler
+    // -- HOST -- 
+    * {butler_who} [Host] "So, uh, how well acquainted are you with Maximilian?"
+        "You're joking, yes? I am his butler, or have you already forgotten?"
+            ** [Party] "Do you know why Maximilian has prepared this gathering?" 
+            "Is it not obvious? He truly loves his dear friend... Kidding, of course. If you are so very interested in the truth, I might allow you to hear some of it. 
+            Sir Maximilian has become quite the paranoiac, seeing ghosts in his halls... But you shouldn't put so much stock in rumors, right, Detective? Why, after all, would you trust the butler?"
+            ~ butler_host = true 
+                {BPlot == BPlotList.None and butler_host and butler_who:
+                    ***  [Haunting] "Max thinks his house is haunted?" 
+                        "That is one way of putting it... Hm? What is that behind you, detective? You haven't done anything to rouse the ire of a spirit, now have you?
+                        ...But, oh, you needn't worry on that. He'll be holding a seance later this evening, he's trying to cleanse the place. Ask someone else about it. I am weary of the subject." 
+                        <i>If Max was having problems... why didn't he tell me about it?</i>
+                        ~ BPlot = BPlotList.Seance 
+                        ++++ -> Butler 
+                - else:
+                    ***  [Seance] "So I've heard. What do you think of all this flimflammery? I suppose I've given away my feelings on the subject." 
+                    "Oh, I agree. I have cautioned my employer against such endeavors... But who am I to decide on a subject that clamors at one's heart so? If it puts Sir Maximilian's mind at ease, perhaps all this pageantry is worth it." 
+                        ++++ -> Butler 
+                }
+            +++ -> Butler 
+    
+    
+    // -- EXORCIST -- 
+    // TODO this could possibly give the player a single variable to reflect that they know the exorterminator has two jobs, but we don't have anything for that right now 
+    * {BPlot == BPlotList.Exorcist and butler_who} [Exorcist] "Tell me what you know about this "exorcist" character." 
+        "To speak candidly, and a touch unkindly, I must say I loathe the man's presence."
+        The Butler shudders, the scrape of the knife more and more grating. 
+        "I hear he operates as an exterminator as well. Any unwelcome rodents in our home had best be on guard." 
+        He pauses, motionless eyes fixed on mine. 
+        ++ -> Butler 
     
     
     // -- CAKE -- 
-    // TODO how is the cake being tracked? when Time is empty, is the game taking place before the "body" is found?     
-    //* {not Time} [Cake] "I heard from my friend that cake will be served."
+    //TODO once cake states are done something like "careful... red jelly is slippery, and the floor of the kitchen is so awfully hard and cold... Ah, and those heavy doors... its quite possible no one will hear a thing."
+    * {CakeState == 4 and butler_who} [Cake] "I heard from my friend that cake will be served."
         "You are correct. 
         ...Were you expecting me to elaborate? Hmph. Very well. The cake has been created in Sir Maximilian's image. You should see it. It's quite... something."
         The Butler's eyes fall down to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
@@ -52,7 +78,7 @@
         
     
     // -- HELLO -- 
-    + [Hello] "Just saying hello."
+    + {butler_who} [Hello] "Just saying hello."
         {butler_hello < 2:
             "Do you truly enjoy my company so much? I'm flattered. But you have better things to do, don't you?"
             ~ butler_hello ++
@@ -63,7 +89,8 @@
         }
         ++ -> Butler
     
+    
     // -- RETURN -- 
     + [-Return-]
         -> Foyer 
-    
+        
