@@ -29,12 +29,24 @@ INCLUDE DEBUG
     // -- Butler Variables --  
     // whether butler has been talked to 
     VAR butler_met = false
+<<<<<<< Updated upstream
     // whether player has asked butler who he is 
     VAR butler_who = false 
     // whether butler has been asked about host 
     VAR butler_host = false 
+=======
     // times player selects hello option 
     VAR butler_hello = 0
+    
+    //fridge variables
+    VAR fridge_met = false
+    // whether player has asked fridge who he is 
+    VAR fridge_who = false 
+    // whether fridge has been asked about host 
+    VAR fridge_host = false 
+>>>>>>> Stashed changes
+    // times player selects hello option 
+    VAR fridge_hello = 0
     
     // -- Exterminator Variables --  
     // whether Exterminator has been talked to 
@@ -166,6 +178,23 @@ INCLUDE DEBUG
     
 
 ===ViewCake===
+<<<<<<< Updated upstream
+=======
+    // None, Some, Blood, Trail, RaccoonIn
+    {
+        - Cake == CakeList.None:
+            Cake is Full
+        - Cake == CakeList.Some:
+            Cake lost some toppings
+        - Cake == CakeList.Blood:
+            Cake lost some pieces
+        - Cake == CakeList.Trail:
+            Crumbs from the Cake is gone
+        - Cake == CakeList.RaccoonIn:
+            There's a raccoon in the Cake
+        }
+->->
+>>>>>>> Stashed changes
 
     ->DiningRoom
 -> Kitchen
