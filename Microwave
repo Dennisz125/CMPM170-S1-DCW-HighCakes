@@ -1,4 +1,26 @@
 ===Microwave===
 
-
-->DiningRoom
+    // Intro
+    
+    {not microwave_met:
+        The microwave. Much like the many other appliances that line the granite countertops of this kitchen, It is mostly chrome. The front consists of a tinted window, handle, and button pad with a multitude of functions besides the numbers. A totally, ordinary, microwave.
+            ~ microwave_met = true
+    - else: 
+        I'm front of the microwave 
+    }
+    
+   + [Open The Microwave]
+        {CakeList.None :
+            Pressing the largest button on the machine, it pops open with a *cling*. The inside of the microwave lights up. Nothing inside - as pristine as the rest of this kitchen. You close the microwave door, with nothing of interest gain.
+        }
+    -> Microwave
+    
+    + [Inspect The Microwave]
+        {CakeList.None :
+            Looking at the microwave, nothing has changed. It is as clean as it was the first time.
+        }
+    -> Microwave
+    
+   // -- RETURN -- 
++ [-Return to the Kitchen-]     
+    ->Kitchen

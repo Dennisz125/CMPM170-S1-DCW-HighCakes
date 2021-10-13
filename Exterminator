@@ -3,7 +3,7 @@ x
 // --Intro--
 {not exterminator_met:
         Discription of Exterminator
-            ~ butler_met = true
+            ~ exterminator_met = true
     - else: 
         Exterminator: Ugh... 
 }

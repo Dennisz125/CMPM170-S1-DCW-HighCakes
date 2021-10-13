@@ -23,7 +23,7 @@
     ~BPlot = BPlotList.Exorcist
     
     //CakeState
-    +{CakeState < 4} "I have bad news, Max..."
+    //+{CakeState < 4} "I have bad news, Max..."
     
     
     +"Nothing new yet, Max" -> Host
