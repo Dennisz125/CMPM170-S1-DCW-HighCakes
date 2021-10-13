@@ -59,7 +59,7 @@
     
     // -- EXORCIST -- 
     // TODO this could possibly give the player a single variable to reflect that they know the exorterminator has two jobs, but we don't have anything for that right now 
-    * {BPlot == BPlotList.Exorcist and butler_who} [Exorcist] "Tell me what you know about this "exorcist" character." 
+    * {BPlot == BPlotList.Exorcist and butler_who} [Exorcist] "Tell me what you know about this 'exorcist' character." 
         "To speak candidly, and a touch unkindly, I must say I loathe the man's presence."
         The Butler shudders, the scrape of the knife more and more grating. 
         "I hear he operates as an exterminator as well. Any unwelcome rodents in our home had best be on guard." 
