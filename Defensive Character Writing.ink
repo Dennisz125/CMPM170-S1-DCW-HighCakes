@@ -36,6 +36,10 @@ INCLUDE DEBUG
     // times player selects hello option 
     VAR butler_hello = 0
     
+    // -- Microwave Variables -- 
+    // whether microwave has been 'talked' to
+    VAR microwave_met = false
+    
     //fridge variables
     VAR fridge_met = false
     // whether player has asked fridge who he is 
