@@ -33,13 +33,30 @@ INCLUDE DEBUG
     
     //fridge variables
     VAR fridge_met = false
+    // whether player has asked butler who he is 
+    VAR butler_who = false 
+    // whether butler has been asked about host 
+    VAR butler_host = false 
+    // times player selects hello option 
+    VAR butler_hello = 0
+    
+    // -- Exterminator Variables --  
+    // whether Exterminator has been talked to 
+    VAR exterminator_met = false
+    // whether player has asked Exterminator who he is 
+    VAR exterminator_who = false 
+    // whether Exterminator has been asked about host 
+    VAR exterminator_host = false 
+    // times player selects hello option 
+    VAR exterminator_hello = 0
+    
     
     VAR kitchen_visited = false
     VAR foyer_visited = false
     VAR dining_visited = false
     
-    // TODO divert to beginning of story 
     ->Intro
+
 
 ===Intro===
     
@@ -143,15 +160,41 @@ INCLUDE DEBUG
                     ->Kitchen
     }
 
-===NoteBook===
+===NoteBook(room)===
     Here are all the clues you got so far.
+    ->ViewRaccoonKnowledge->
+    ->ViewCake->
     // Print out knowledge state
-->->
+    + [Close Notebook]
+        {
+        - room == Kitchen:
+            ->Kitchen
+        - room == DiningRoom:
+            ->DiningRoom
+        - room == Foyer:
+            ->Foyer
+        }
     
-
 ===ViewCake===
+    {
+        - CakeState == 4:
+            Cake is Full
+        - CakeState == 3:
+            Cake lost some toppings
+        - CakeState == 2:
+            Cake lost some pieces
+        - CakeState == 1:
+            Cake is gone
+        }
+->->
 
-    ->DiningRoom
--> Kitchen
-
-
+===ViewRaccoonKnowledge===
+    {
+        - RaccoonKnowledge == RaccoonKnowledgeList.NotAware:
+            Raccoon is not aware
+        - RaccoonKnowledge == RaccoonKnowledgeList.OutsideInfluence:
+            Raccoon is aware of Outside Influence
+        - RaccoonKnowledge == RaccoonKnowledgeList.Dunnit:
+            Raccoon is Dunnit
+    }
+->->

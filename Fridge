@@ -1,4 +1,10 @@
 ===Fridge===
+    //first time vs return text
+    {(not fridge_met):
+        The extorminator
+            ~ fridge_met = true
+    - else: 
+        How may assist you?
+    }
 
-
-->DiningRoom
+    ->DiningRoom
