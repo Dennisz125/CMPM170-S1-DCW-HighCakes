@@ -16,17 +16,14 @@ INCLUDE DEBUG
     LIST BPlotList= None, Seance, Exorcist, Conclusion
     VAR BPlot = BPlotList.None
     
-    LIST GhostKnowledgeList= None, Ghost, Demon
-    VAR GhostKnowledge = GhostKnowledgeList.None
+    LIST CakeList = None, Some, Blood, Trail, RaccoonIn
+    VAR Cake = CakeList.None
     
-    LIST Time = Six, Seven, Eight, Nine
-    // DELETE LATER quick way to test different time states 
-    // ~ Time += Six
-    // ~ Time += Seven
-    // ~ Time += Eight
-    // ~ Time += Nine
-    
+    VAR Time = 1700 //Military time
+    //Todo: Function to convert time
+    Time: {Time}
     //red herring for accusing appliances?
+    
     
     // -- Butler Variables --  
     // whether butler has been talked to 
@@ -34,13 +31,19 @@ INCLUDE DEBUG
     // times player selects hello option 
     VAR butler_hello = 0
     
+    
     // -- Cake State: 0 is gone, 4 is full --
     VAR CakeState = 4
+    
+    VAR KitchenVisits = 0
+    VAR FoyerVisits = 0
+    VAR DiningVisits = 0
     
     // TODO divert to beginning of story 
     ->Intro
 
 ===Intro===
+
 Exterminator: {GetExterminatorQuotes()}
 ->Kitchen
 
@@ -57,7 +60,7 @@ Exterminator: {GetExterminatorQuotes()}
     + [Foyer] 
         -> Foyer 
     + [Open Notebook] 
-        -> NoteBook
+        -> NoteBook ->
     + [DEBUG]
         ->DEBUG
 
@@ -85,11 +88,12 @@ Exterminator: {GetExterminatorQuotes()}
 
 
 ===NoteBook===
-    Here are all the clues you got so far
+    Here are all the clues you got so far.
+    // Print out knowledge state
 ->->
     
 
-===Cake===
+===ViewCake===
 
     ->DiningRoom
 -> Kitchen

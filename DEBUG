@@ -2,7 +2,7 @@
 DEBUG MENU
 RaccoonKnowledge: {RaccoonKnowledge}
 BPlot: {BPlot}
-GhostKnowledge: {GhostKnowledge}
+Cake: 
 + [Set RaccoonKnowledge]
    ->SetRaccoonKnowledge
 + [Set BPlot]

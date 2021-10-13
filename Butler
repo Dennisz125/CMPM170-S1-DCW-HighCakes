@@ -25,7 +25,7 @@
     
     // -- WHO --
     * [Butler] "Who are you?"
-        {Time hasnt Eight and Time hasnt Nine: 
+        //{Time hasnt Eight and Time hasnt Nine: 
         "Hoh hoh. Is it not clear? I am the butler of this estate. I thought it would be apparent to a pretend detective such as yourself."
         - else: 
          "The evening has nearly concluded and yet you still remain ignorant as to my identity? And you fancy yourself a private investigator?"
@@ -43,7 +43,7 @@
     
     // -- CAKE -- 
     // TODO how is the cake being tracked? when Time is empty, is the game taking place before the "body" is found?     
-    * {not Time} [Cake] "I heard from my friend that cake will be served."
+    //* {not Time} [Cake] "I heard from my friend that cake will be served."
         "You are correct. 
         ...Were you expecting me to elaborate? Hmph. Very well. The cake has been created in Sir Maximilian's image. You should see it. It's quite... something."
         The Butler's eyes fall down to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
