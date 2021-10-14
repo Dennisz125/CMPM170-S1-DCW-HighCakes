@@ -1,15 +1,15 @@
 ===Butler===
 
 
-    //TODO three cake convos, tell him something broke in 
-    
+    //TODO fix cake state conditions, three cake convos, inform him something broke in, he tells you something is in the cake 
+    //
     
     // ----INTRO ---- 
     
     
    // first time talking to butler
     {not butler_met:
-        An imposing man stands with his back against the white walls of the foyer. I had nearly mistaken him for a statue until we briefly made eye contact. The gray bristles of his moustache appear to stick straight down, as if recently combed by a careful hand. 
+        The butler stands with his back against the white walls of the foyer, making an imposing figure. I had nearly mistaken him for a statue until we briefly made eye contact. The gray bristles of his moustache appear to stick straight down, as if recently combed by a careful hand. 
             ~ butler_met = true
     - else: 
         The Butler. Ugh... 
@@ -20,7 +20,7 @@
     
     
     // -- WHO --
-    * [Butler] "Who are you?"
+    * [Butler] "Who are you, exactly?"
         {CakeState > 1: 
         "Hoh hoh. Is it not clear? I am the butler of this estate. I thought it would be apparent to a pretend detective such as yourself."
         - else: 
@@ -69,6 +69,7 @@
     
     // -- CAKE -- 
     //TODO once cake states are done something like "careful... red jelly is slippery, and the floor of the kitchen is so awfully hard and cold... Ah, and those heavy doors... its quite possible no one will hear a thing."
+    // may mention something like 'i dont like you standing over the crime scene like that. anyway, have you seen anything? something mustve happened after I left." "a man sometimes goes to the bathroom. needs must, and all." its unconvincing 
     * {CakeState == 4 and butler_who} [Cake] "I heard from my friend that cake will be served."
         "You are correct. 
         ...Were you expecting me to elaborate? Hmph. Very well. The cake has been created in Sir Maximilian's image. You should see it. It's quite... something."

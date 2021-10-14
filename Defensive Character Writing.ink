@@ -82,11 +82,12 @@ INCLUDE IntroRooms
 
 === Kitchen === 
     The refined warmth of the kitchen is overshadowed by the stench of a crime. My unshakeable instincts tell me a clue awaits here, ready to reveal the identity of the culprit.  
-        + [Talk to Blender]
+    The countertops house a blender and microwave. A high-tech fridge has seated itself in the corner. 
+        + [Investigate Blender]
             -> Blender
-        + [Talk to Microwave]
+        + [Investigate Microwave]
             -> Microwave
-        + [Talk to Fridge]
+        + [Investigate Fridge]
             -> Fridge
         + [Enter Dining Room] 
             -> DiningRoom
@@ -100,6 +101,7 @@ INCLUDE IntroRooms
 
 === DiningRoom === 
     After seeing what happened to that poor cake... I couldn't imagine having an appetite. The food laid out in this room makes me ill. I'd better catch that culprit quick. 
+    Max is here, and so is that exorcist... 
         + [Talk to Host]
             -> Host
         + [Talk to Exorcist]
@@ -110,6 +112,7 @@ INCLUDE IntroRooms
 
 === Foyer ===
     The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. 
+    The butler stands in the hall. 
     What remains of the cake lays on the pedestal. The scene is hidden behind the curtain, for Max's sanity. <i>Do I take a peak?</i>
         + [Talk to Butler]
             -> Butler
