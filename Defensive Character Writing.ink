@@ -81,7 +81,7 @@ INCLUDE IntroRooms
     * [Banter] "Don't call me that." 
         Maximilian smiles and shakes his head, muttering, "No promises, old friend." 
         ** [Inquire] "Never mind that. Erm, you've done quite well for yourself. Lovely place. Say, whose truck is that outside?"
-            "Ah, Mr. Ex! My specialist! I'm having the place cleansed of some dark energy. It's only routine maintenance, really." 
+            "Ah, Mr. X! My specialist! I'm having the place cleansed of some dark energy. It's only routine maintenance, really." 
             *** [Doubt] "Cleansed? Now don't tell me you've fallen for that mumbo jumbo."
                 "Oh, you just have to see for yourself. You'll feel the difference. Now, follow me into the foyer, we must get started on preparations for the evening! My butler will take your coat... Er, where is that chap anyway? Never mind, just hand it to me, I'll take care of it."
                 I slip off my coat and hand it to Maximilian as we step inside. 
