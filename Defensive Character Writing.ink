@@ -36,6 +36,8 @@ INCLUDE IntroRooms
     VAR butler_who = false 
     // whether butler has been asked about host 
     VAR butler_host = false 
+    // whether butler has been informed that something broke in 
+    VAR butler_informed = false 
     // times player selects hello option 
     VAR butler_hello = 0
     
@@ -61,6 +63,8 @@ INCLUDE IntroRooms
     VAR exterminator_host = false 
     // times player selects hello option 
     VAR exterminator_hello = 0
+    
+    
     ->Intro
 
 

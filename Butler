@@ -1,27 +1,16 @@
 ===Butler===
-
-
-    //TODO fix cake state conditions, three cake convos, inform him something broke in, he tells you something is in the cake 
-    //
-    
     // ----INTRO ---- 
-    
-    
-   // first time talking to butler
     {not butler_met:
-        The butler stands with his back against the white walls of the foyer, making an imposing figure. I had nearly mistaken him for a statue until we briefly made eye contact. The gray bristles of his moustache appear to stick straight down, as if recently combed by a careful hand. 
+        The Butler stands with his back against the white walls of the foyer, making an imposing figure. I had nearly mistaken him for a statue until we briefly made eye contact. The gray bristles of his moustache appear to stick straight down, as if recently combed by a careful hand. 
             ~ butler_met = true
     - else: 
         The Butler. Ugh... 
     }
     
     
-    // ---- QUESTIONS ---- 
-    
-    
     // -- WHO --
     * [Butler] "Who are you, exactly?"
-        {CakeState > 1: 
+        {Cake == CakeList.Trail or Cake == CakeList.RaccoonIn: 
         "Hoh hoh. Is it not clear? I am the butler of this estate. I thought it would be apparent to a pretend detective such as yourself."
         - else: 
          "The evening has nearly concluded and yet you still remain ignorant as to my identity? And you fancy yourself a private investigator?"
@@ -59,7 +48,7 @@
     
     // -- EXORCIST -- 
     // TODO this could possibly give the player a single variable to reflect that they know the exorterminator has two jobs, but we don't have anything for that right now 
-    * {BPlot == BPlotList.Exorcist and butler_who} [Exorcist] "Tell me what you know about this 'exorcist' character." 
+    * {butler_who} [Exorcist] "Tell me what you know about this 'exorcist' character." 
         "To speak candidly, and a touch unkindly, I must say I loathe the man's presence."
         The Butler shudders, the scrape of the knife more and more grating. 
         "I hear he operates as an exterminator as well. Any unwelcome rodents in our home had best be on guard." 
@@ -67,23 +56,49 @@
         ++ -> Butler 
     
     
-    // -- CAKE -- 
-    //TODO once cake states are done something like "careful... red jelly is slippery, and the floor of the kitchen is so awfully hard and cold... Ah, and those heavy doors... its quite possible no one will hear a thing."
-    // may mention something like 'i dont like you standing over the crime scene like that. anyway, have you seen anything? something mustve happened after I left." "a man sometimes goes to the bathroom. needs must, and all." its unconvincing 
+    // -- INTRUDER -- 
+    * {RaccoonKnowledge == RaccoonKnowledgeList.OutsideInfluence and butler_who} [Intruder] "I've discovered that someone broke into the mansion. Would you happen to have any information on this?" 
+        "Broke in? Under my watchful eye? <i>Hoh!</i> Entirely reasonable. It really wouldn't be so difficult for a mysterious stranger to slip inside and give you a good stab in the back. 
+        But, jesting aside... Thank you for informing me. I will look out for any intruders... You know, Sir Maximilian says that I've eyes on the back of my head. Would you like to see?" 
+        ~ butler_informed = true 
+        ++ -> Butler 
     
+    
+    // -- CAKE -- 
+    // none 
     * {Cake == CakeList.None and butler_who} [Cake] "I heard from my friend that cake will be served."
         "You are correct. 
         ...Were you expecting me to elaborate? Hmph. Very well. The cake has been created in Sir Maximilian's image. You should see it. It's quite... something."
         The Butler's eyes fall down to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
         "I'll need something sharp to cut it with," he says, holding up the knife for me to get a closer look.  
         ++ -> Butler
-        //    LIST CakeList = None, Some, Blood, Trail, RaccoonIn
-    * {Cake == CakeList.Some and butler_who} [Cake - Murder] "It's a tragedy." 
+    // some 
+    * {Cake == CakeList.Some and butler_who} [Cake - Crime Scene] "It's a tragedy." 
         "I suppose... Were you expecting some elaboration? Very well. The cake had been created in Sir Maximilian's image. It truly was a sight to behold... And now?
         The Butler's eyes fall to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
         "Why, there is nothing for this little instrument to <i>cut</i> into. And isn't that the real tragedy?" He holds the knife close to my face, allowing me to inspect its detail. He's right; it doesn't look recently used... But the murder didn't look like a clean cut anyway.  
         ++ -> Butler
-    
+    // blood 
+    * {Cake == CakeList.Blood and butler_who} [Cake - Jelly] "The jelly from the cake is splattered all over." 
+        "Oh, I know. A bit of a bloody mess. Let's hope <i>you</i> don't end up like that, hm? Snooping around carries its dangers." 
+        ++ -> Butler 
+    // trail 
+    * {Cake == CakeList.Trail and butler_who} [Cake - Trail] "There's a trail of jelly that leads straight to the kitchen." 
+        "You think you've found the trail left by your culprit? Careful... Red jelly is slippery, and the floor of the kitchen is so awfully cold and hard... Ah, and those heavy doors... It's quite possible no one will hear a thing." 
+        ** [Question Further] "But you must've seen <i>something</i>. You've been standing in this same spot the whole time. You haven't taken your eyes off of the scene." 
+            "That may be so... But have you heard, detective? Every so often, a man must trek to a lavatory to relieve himself. Needs must, and all. I apologize for failing to meet your standards for an adequate sentry." This response is woefully unconvincing, yet completely predictable. 
+            +++ -> Butler 
+    // raccoon in 
+    * {Cake == CakeList.RaccoonIn and butler_who} [Cake - Update] "Haven't seen anything new with our victim." 
+        "Really? Just a moment ago, I saw something squirming around in the cake... Why are you looking at me like that? 
+        {butler_informed == true: 
+            ...Ah, you are suspecting it is our little interloper, are you not? Well, go on. I certainly won't stop you." 
+            ~RaccoonKnowledge = RaccoonKnowledgeList.Dunnit
+        - else: 
+            I'm getting to be quite frail. Whatever it is, I think it best that you deal with it." 
+        }
+        ++-> Butler
+
     
     // -- HELLO -- 
     + {butler_who} [Hello] "Just saying hello."
