@@ -5,6 +5,8 @@ INCLUDE Host
 INCLUDE Fridge
 INCLUDE Exterminator
 INCLUDE DEBUG
+INCLUDE IntroRooms
+
 
 -> Init 
 
@@ -83,7 +85,7 @@ INCLUDE DEBUG
     "Oh, you just have to see for yourself. You'll feel the difference. Now, follow me into the foyer, we must get started on preparations for the evening! My butler will take your coat... Er, where is that chap anyway? Never mind, just hand it to me, I'll take care of it."
     I slip off my coat and hand it to Maximilian as we step inside. 
 
-    -> Kitchen 
+    -> IntroRooms 
     
 ->Kitchen
 
@@ -155,7 +157,6 @@ INCLUDE DEBUG
         + [Kitchen]
             ->Kitchen
     }
-->END
 
 === Foyer ===
     {(not foyer_visited):

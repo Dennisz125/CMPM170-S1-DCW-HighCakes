@@ -4,13 +4,16 @@
 
 //---Intro--- content should depend on Bplot state
 
-    + {BPlot == BPlotList.None}
+    {
+    - BPlot == BPlotList.None: 
         Maximillian sits dejectedly at the dining table. As I approach he looks at me earnestly.
-    + {BPlot == BPlotList.Seance}
+    - BPlot == BPlotList.Seance: 
         Maximillian has cleared some space at the table before him, eyes closed and quietly humming as he rests his hands on the planchette of an ancient looking Oujia board. I give him a quick tap on the shoulder to get his attention, making him jump nearly out of his seat. He turns sheepishly to greet me.
-    + {BPlot == BPlotList.Exorcist}
-        It seems that the 'Exorcist' has Maximillian convinced of a supernatural threat. Maximillian, burning sage and Bible in hand, is making rounds in the Dining Room, attempting to... well I'm not even sure what he'd be hoping to accomplish. As I catch his attention he quickly comes over, and douses me in pungent smoke. He waits for my coughing fit to end before he continues:
- 
+    - BPlot == BPlotList.Exorcist: 
+    It seems that the 'Exorcist' has Maximillian convinced of a supernatural threat. Maximillian, burning sage and Bible in hand, is making rounds in the Dining Room, attempting to... well I'm not even sure what he'd be hoping to accomplish. As I catch his attention he quickly comes over, and douses me in pungent smoke. He waits for my coughing fit to end before he continues:
+    
+    }
+    
     "Any word, old friend?"
 
     //Final accusation, needs to send to conclusion, need conclusion.
