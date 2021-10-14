@@ -70,13 +70,20 @@
     // -- CAKE -- 
     //TODO once cake states are done something like "careful... red jelly is slippery, and the floor of the kitchen is so awfully hard and cold... Ah, and those heavy doors... its quite possible no one will hear a thing."
     // may mention something like 'i dont like you standing over the crime scene like that. anyway, have you seen anything? something mustve happened after I left." "a man sometimes goes to the bathroom. needs must, and all." its unconvincing 
-    * {CakeState == 4 and butler_who} [Cake] "I heard from my friend that cake will be served."
+    
+    * {Cake == CakeList.None and butler_who} [Cake] "I heard from my friend that cake will be served."
         "You are correct. 
         ...Were you expecting me to elaborate? Hmph. Very well. The cake has been created in Sir Maximilian's image. You should see it. It's quite... something."
         The Butler's eyes fall down to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
         "I'll need something sharp to cut it with," he says, holding up the knife for me to get a closer look.  
         ++ -> Butler
-        
+        //    LIST CakeList = None, Some, Blood, Trail, RaccoonIn
+    * {Cake == CakeList.Some and butler_who} [Cake - Murder] "It's a tragedy." 
+        "I suppose... Were you expecting some elaboration? Very well. The cake had been created in Sir Maximilian's image. It truly was a sight to behold... And now?
+        The Butler's eyes fall to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
+        "Why, there is nothing for this little instrument to <i>cut</i> into. And isn't that the real tragedy?" He holds the knife close to my face, allowing me to inspect its detail. He's right; it doesn't look recently used... But the murder didn't look like a clean cut anyway.  
+        ++ -> Butler
+    
     
     // -- HELLO -- 
     + {butler_who} [Hello] "Just saying hello."

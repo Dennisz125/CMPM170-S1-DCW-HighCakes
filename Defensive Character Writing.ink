@@ -69,6 +69,8 @@ INCLUDE IntroRooms
     <i>This must be the place.</i>
     I trudge up the driveway of my childhood friend’s newly acquired mansion, my footsteps crunching against the hard gravel. A man dressed up in a tuxedo and top hat walks out to greet me, arms outstretched. 
     "Old sport, you've arrived! Come in, come in. I've an extravagant cake prepared, just for the occasion." 
+    * [- skip intro (DEBUG) -] 
+        -> Foyer 
     * [Banter] "Don't call me that." 
         Maximilian smiles and shakes his head, muttering, "No promises, old friend." 
         ** [Inquire] "Never mind that. Erm, you've done quite well for yourself. Lovely place. Say, whose truck is that outside?"
@@ -78,7 +80,7 @@ INCLUDE IntroRooms
                 I slip off my coat and hand it to Maximilian as we step inside. 
                 **** [Enter Foyer]
                     -> FoyerIntro
-    
+               
 
 === Kitchen === 
     The refined warmth of the kitchen is overshadowed by the stench of a crime. My unshakeable instincts tell me a clue awaits here, ready to reveal the identity of the culprit.  
@@ -108,6 +110,8 @@ INCLUDE IntroRooms
             -> Exterminator
         + [Kitchen]
             -> Kitchen
+        + [DEBUG]
+            -> DEBUG
 
 
 === Foyer ===
@@ -120,6 +124,8 @@ INCLUDE IntroRooms
             -> ViewCake 
         + [Enter Kitchen] 
             -> Kitchen 
+        + [DEBUG]
+            -> DEBUG
 
 
 === NoteBook ===

@@ -2,15 +2,20 @@
 DEBUG MENU
 RaccoonKnowledge: {RaccoonKnowledge}
 BPlot: {BPlot}
-Cake: 
+Cake: {Cake} 
+
 + [Set RaccoonKnowledge]
    ->SetRaccoonKnowledge
 + [Set BPlot]
     ->SetBPlot
++ [Set Cake State]
+    ->SetCake
 + [Return to Dining Room]
     ->DiningRoom
-+ [Return to kitchen]
++ [Return to Kitchen]
     ->Kitchen
++ [Return to Foyer]
+    ->Foyer
     
 ===SetRaccoonKnowledge===
 + [NotAware]
@@ -37,3 +42,41 @@ Cake:
 + [Conclusion]
     ~BPlot = BPlotList.Conclusion
     ->DEBUG
+    
+===SetCake=== 
+// None, Some, Blood, Trail, RaccoonIn
++ [None]
+    ~Cake = CakeList.None 
+    -> DEBUG
++[Some]
+    ~Cake = CakeList.Some 
+    -> DEBUG
++[Blood]
+    ~Cake = CakeList.Blood 
+    -> DEBUG
++[Trail]
+    ~Cake = CakeList.Trail 
+    -> DEBUG
++[RaccoonIn]
+    ~Cake = CakeList.RaccoonIn
+    -> DEBUG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
