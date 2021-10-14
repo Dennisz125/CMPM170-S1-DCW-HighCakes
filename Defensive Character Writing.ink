@@ -10,6 +10,7 @@ INCLUDE IntroRooms
 
 -> Init 
 
+
 === Init === 
     // -- Player Knowledge States -- 
     LIST RaccoonKnowledgeList= NotAware, OutsideInfluence, Dunnit
@@ -69,25 +70,24 @@ INCLUDE IntroRooms
     VAR foyer_visited = false
     VAR dining_visited = false
     
-    // TODO divert to beginning of story 
     ->Intro
+
 
 ===Intro===
     The brisk autumn air nips at the crevices and creases of my weathered face as I recheck the notes I had written to myself earlier this morning. A coffee stain conceals the latter half of the address. 
     <i>This must be the place.</i>
     I trudge up the driveway of my childhood friend’s newly acquired mansion, my footsteps crunching against the hard gravel. A man dressed up in a tuxedo and top hat walks out to greet me, arms outstretched. 
     "Old sport, you've arrived! Come in, come in. I've an extravagant cake prepared, just for the occasion." 
-    "Don't call me that." 
-    Maximilian smiles and shakes his head, muttering, "No promises, old friend." 
-    "Never mind that. Erm, you've done quite well for yourself. Lovely place. Say, whose truck is that outside?"
-    "Ah, Mr. Ex! My specialist! I'm having the place cleansed of some dark energy. It's only routine maintenance, really." 
-    "Cleansed? Now don't tell me you've fallen for that mumbo jumbo." 
-    "Oh, you just have to see for yourself. You'll feel the difference. Now, follow me into the foyer, we must get started on preparations for the evening! My butler will take your coat... Er, where is that chap anyway? Never mind, just hand it to me, I'll take care of it."
-    I slip off my coat and hand it to Maximilian as we step inside. 
-
-    -> IntroRooms 
+    * [Banter] "Don't call me that." 
+        Maximilian smiles and shakes his head, muttering, "No promises, old friend." 
+        ** [Inquire] "Never mind that. Erm, you've done quite well for yourself. Lovely place. Say, whose truck is that outside?"
+            "Ah, Mr. Ex! My specialist! I'm having the place cleansed of some dark energy. It's only routine maintenance, really." 
+            *** [Doubt] "Cleansed? Now don't tell me you've fallen for that mumbo jumbo."
+                "Oh, you just have to see for yourself. You'll feel the difference. Now, follow me into the foyer, we must get started on preparations for the evening! My butler will take your coat... Er, where is that chap anyway? Never mind, just hand it to me, I'll take care of it."
+                I slip off my coat and hand it to Maximilian as we step inside. 
+                **** [Enter Foyer]
+                    -> FoyerIntro
     
-->Kitchen
 
 ===Kitchen===
     {(not kitchen_visited):
@@ -158,33 +158,15 @@ INCLUDE IntroRooms
             ->Kitchen
     }
 
+
 === Foyer ===
-    {(not foyer_visited):
-        The once pristine velvet carpet is now stained by blood, a strawberry filling which was taken from this world far too soon… and quite a bit of frosting. Maximilian’s once-immaculate cake lay in shambles on it’s pedestal. The foyer is eerily quiet as I enter, searching for clues as to what monster might have enacted such a hateful attack against our host… or the confectionary version of him, at least.
+    The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. 
+    What remains of the cake lays on the pedestal. The scene is hidden behind the curtain, for Max's sanity. <i>Do I take a peak?</i>
         + [Talk to Butler]
             -> Butler
         + [Go to Kitchen] 
             -> Kitchen 
-    -else: 
-        The inside of Maximillian’s Mansion looks more like a museum than a home at first. Marble statues periodically line the walls, and a wide staircase leads to the second and third floors. At the center of the landing to the second floor there’s a portrait of Maximillian sitting with hands crossed in a velvet chair, framed by gold. Of course. Max leads me along a literal red carpet which leads away from the stairs and towards a polished metallic door. He seems more interested in having guests than the lavish lodging he came into so recently.
 
-	    “Tell me, old chap, how has that detective thing been treating you? We simply Must catch up, it’s been too long!”
-
-        *[”Well…”]
-            Thankfully the butler interjects before you can get a word in. Your lifelong dream of becoming a detective seems a bit dull compared to the insane wealth Maximillian inherited last year.
-	        The butler gives you a concerning look of what might be bloodlust or just a wide, dead-eyed stare as he brushes past.
-	        “Sir, I thought you’d like to know that the preparations for this evenings… guests are complete,” He gives you a distasteful look up and down as he refers to the partygoers, then motions towards a large pedestal in the center of the Foyer, its occupant hidden behind yet another red velvet curtain.
-            “Oh thank you, Bartholomew!” Max looks my way, a wild look in his eye. “I’ve had the MOST wonderful dessert prepared for you and the other guests tonight! I’ve already seen the handiwork, and I must say that it looks positively to die for!”
-
-            **[“I certainly hope not.”] 
-                You glance at the terrifying butler for a moment before Maximillian lets out something between a squeal of delight and laughter.
-
-    	        ”Oh old chap, your humor and wit shall surely bring some life to this old, dead house! Come, let me show you where all the best work happens here.” He starts walking towards the metallic doors along the right side of the enormous foyer. A small circular window reveals a few pots and pans hanging from the ceiling on the other side.
-
-                ***”The kitchen?”
-                    ”Now there’s that detective brain of yours! I can’t wait for you to see!”
-                    ->Kitchen
-    }
 
 ===NoteBook===
     Here are all the clues you got so far.
