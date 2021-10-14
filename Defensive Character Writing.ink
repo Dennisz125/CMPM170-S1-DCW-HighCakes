@@ -43,7 +43,7 @@ INCLUDE IntroRooms
     // whether microwave has been 'talked' to
     VAR microwave_met = false
     
-    //fridge variables
+    // -- Fridge Variables -- 
     VAR fridge_met = false
     // whether player has asked fridge who he is 
     VAR fridge_who = false 
@@ -61,19 +61,10 @@ INCLUDE IntroRooms
     VAR exterminator_host = false 
     // times player selects hello option 
     VAR exterminator_hello = 0
-    
-    
-    //fridge variables
-    //VAR fridge_met = false
-    
-    VAR kitchen_visited = false
-    VAR foyer_visited = false
-    VAR dining_visited = false
-    
     ->Intro
 
 
-===Intro===
+=== Intro ===
     The brisk autumn air nips at the crevices and creases of my weathered face as I recheck the notes I had written to myself earlier this morning. A coffee stain conceals the latter half of the address. 
     <i>This must be the place.</i>
     I trudge up the driveway of my childhood friend’s newly acquired mansion, my footsteps crunching against the hard gravel. A man dressed up in a tuxedo and top hat walks out to greet me, arms outstretched. 
@@ -89,74 +80,32 @@ INCLUDE IntroRooms
                     -> FoyerIntro
     
 
-===Kitchen===
-    {(not kitchen_visited):
-        “So what do you think, old chap? Take a look around, mi casa es su casa and all that.” Maximilian rummages around in one of the nearby drawers for something, giving me a chance to look around the kitchen, which I’m almost positive I’ve seen in a cooking magazine somewhere.
-        The pristine white doors open to reveal a perfectly well kept room of black and white checkered tile floors and rosy pink granite countertops. Along the wall to the right is a row of several too many chrome stoves and counters home to a few state-of-the-art appliances. To the left is a wall dedicated to a vast pantry and a gargantuan silver refrigerator with a high-tech looking visual display on one of it’s several doors. 
-        * ["Fancy"]
-            It’s a deceptively long walk across the kitchen to the large bay window looking out onto the sprawling estate. The view is broken only by a small copse of dark oak trees across the manicured lawns behind Maximillian’s mansion. A brisk wind blows through the smaller window to the side of the first. A shiver runs down my spine.
-            The refined look of the kitchen is now overshadowed by the stain of a murder, and though things seem to be in order here, I can’t shake the feeling that a clue might be waiting here which could reveal the villain’s identity…
-            ** [shut window]
-                Maximilian may not have to worry about the heating bill, but I won’t have a butler to tend to me if I catch a cold.
-                “Oh sorry about that, there’s just nothing quite like the smell of freshly trimmed hedges with your afternoon tea, isn’t that right, Bartholomew? The butler responds ”Right you are, sir.” He inclines his head, the serious look on his face never wavering.
-                 *** So… what’s next?”
-                    [max] “I’m so glad you asked, my friend! Let me show you to the Dining Room, after all, a good host must serve more than just dessert!” Maximilian begins walking towards another polished silver door across the room from the fridge.
-                    ~ kitchen_visited = true
-                    ->Kitchen
-    - else:
-        The refined look of the kitchen is now overshadowed by the stain of a murder, and though things seem to be in order here, I can’t shake the feeling that a clue might be waiting here which could reveal the villain’s identity…
+=== Kitchen === 
+    The refined warmth of the kitchen is overshadowed by the stench of a crime. My unshakeable instincts tell me a clue awaits here, ready to reveal the identity of the culprit.  
         + [Talk to Blender]
-            ->Blender
+            -> Blender
         + [Talk to Microwave]
-            ->Microwave
+            -> Microwave
         + [Talk to Fridge]
-            ->Fridge
-        + [Dining room] 
-            ->DiningRoom
-        + [Foyer] 
+            -> Fridge
+        + [Enter Dining Room] 
+            -> DiningRoom
+        + [Enter Foyer] 
             -> Foyer 
         // + [Open Notebook] 
         //     -> NoteBook ->
         + [DEBUG]
-            ->DEBUG
-    }
+            -> DEBUG
 
-    
-    
-===DiningRoom===
-    {(not dining_visited):
-        As we enter the dining room a wave of delectable scents washes over us. My mouth just about explodes from the aroma of roasted chickens, a whole roasted hog with an obligatory apple in-mouth, baskets of freshly baked bread, and an absolute smorgasbord of beautiful dishes which could feed a village. How was the kitchen so clean after this nightmare of prep work? At this point the butler truly was a terrifying figure. Maximillians throws his arm around my shoulder and jostles me a bit.
 
-	    [max]”Well? Is this not a feast fit for my housewarming? I’ve spared no expense, and if you find yourself wanting to eat something which we haven't prepared here, well then I might just have to sign the deed over to you instead!”
-
-        Maximilian wasted no time in walking me about, pointing out dishes and hors d'oeuvres as we go. The rich wooden paneling on the walls, extravagant rug on the floor, and hand carved table and chairs are somewhat overwhelming just on their own. Several crystal chandeliers hang over the table, which could go on seemingly forever. Velvet cushions beckon, and I feel like if I sat down and started eating I might just have to die here at this table.
-        
-        Maximillian chuckles at the look of wonder on my face.
-        
-	    ”You look like you’ve seen a delicious ghost, old friend! Help yourself to anything you’d like.
-	    
-	    After several moments of contemplation I reach for a nearby basket of bread. Probably better to go easy before the party even starts. Before I can take a truly perfect dinner roll, bell tolls from somewhere else in the mansion. Maximilian looks up excitedly and drags you to the door.
-
-	    ”Plenty of time for food later, but you simply MUST meet my next guest! They’re a detective, too… Well, in a less formal capacity, at least. Come, come!”
-	    
-	    I look back longingly at the dining room as he drags me away. I look to the rolls waiting there.
-
-        *[“I’ll see you later…”]
-            ~ dining_visited = true
-            ->DiningRoom
-
-    
-    
-    -else:
+=== DiningRoom === 
+    After seeing what happened to that poor cake... I couldn't imagine having an appetite. The food laid out in this room makes me ill. I'd better catch that culprit quick. 
         + [Talk to Host]
-            ->Host
-        + [Talk to Exterminator]
-            ->Exterminator
-        + [Inspect cake]
-            ->Cake
+            -> Host
+        + [Talk to Exorcist]
+            -> Exterminator
         + [Kitchen]
-            ->Kitchen
-    }
+            -> Kitchen
 
 
 === Foyer ===
@@ -164,17 +113,19 @@ INCLUDE IntroRooms
     What remains of the cake lays on the pedestal. The scene is hidden behind the curtain, for Max's sanity. <i>Do I take a peak?</i>
         + [Talk to Butler]
             -> Butler
-        + [Go to Kitchen] 
+        + [Inspect Cake] 
+            -> ViewCake 
+        + [Enter Kitchen] 
             -> Kitchen 
 
 
-===NoteBook===
+=== NoteBook ===
     Here are all the clues you got so far.
     // Print out knowledge state
 ->->
     
 
-===ViewCake===
+=== ViewCake ===
     // None, Some, Blood, Trail, RaccoonIn
     {
         - Cake == CakeList.None:
@@ -187,5 +138,5 @@ INCLUDE IntroRooms
             Crumbs from the Cake is gone
         - Cake == CakeList.RaccoonIn:
             There's a raccoon in the Cake
-        }
+    }
 ->->
