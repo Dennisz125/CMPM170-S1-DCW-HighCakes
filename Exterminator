@@ -2,18 +2,65 @@
 x
 // --Intro--
 {not exterminator_met:
-        Discription of Exterminator
+        He has the kind of face that stops you in your tracks. He must get used to that, the sudden pause in a person's natural expression when they looked his way followed by overcompensating with a nonchalant gaze and a weak smile. It doesn't help that he is so proud of it - a mere thought about Mr. X is repulsive. He was ugly alright, but inside he was simply disgusting.
             ~ exterminator_met = true
+            ->Asking
     - else: 
-        Exterminator: Ugh... 
+        Mr. X: {GetExterminatorQuotes()}
+        ->Asking
 }
 
+===Asking===
 // --Who--
-* Who are you?
-    I'm a Exterminator! 
-    ->Exterminator
-* [Go back to Dining room]
-    ->DiningRoom
+* {not exterminator_who} [Who are you?]
+    Who are you to ask? You are the miserable speck of dust, the little brown furry rotten rodent, the soiled soul, the muddy mugler! I am the one licensed to eliminate evel spirits by the government of the United Nations. A man, free to exorcise at will!
+    ~exterminator_who = true
+    ->Asking
+
+// --Finding the Ghost
+//None, Seance, Exorcist, Conclusion
+* {BPlot == BPlotList.None} [What do you think?]
+    The house is haunted, I’m telling you! I know it in my gut!
+    ->Asking
+* {BPlot == BPlotList.Seance} [What's with the layout?]
+    Remove all distractions… Lower the light.. Each of us should be able to concentrate…
+    Feel roots growing from their feet...
+    ->Asking
+* {BPlot == BPlotList.Exorcist} [Are you sure that it's working]
+    Be quiet! I feel spirits, I see spirits. I am surrounded by white light, I am lifting, my spirit is connected to all others.. The spirit world, I am ready for you!
+    ->Asking
+// {BPlot == BPlotList.FoundGhost}
+//* {BPlot == BPlotList.Conclusion} [I know what's really going on here]
+    
+    ->Asking
+
+// --Conclusion
+
+//CakeState
+//+{CakeState < 4} "I have bad news, Max..."
+
+//---Return---
++[-Return-]
+->DiningRoom
 
 ===function GetExterminatorQuotes
     ~return "{~What an excellent day for an exorcism.|What brings you to this nape of the woods, neck of the wape. How come you're here?|You got a lot of problems. You need help|There is nothing wrong with you, except in your mind|Do you tell me for a fact that an exorcism wouldn't do any good? You are SO wrong!|}"
+
+===ExterminatorReveal
+
+->->
+
+==UseForLater
+{
+    - BPlot == BPlotList.None: 
+        //Maximillian sits dejectedly at the dining table. As I approach he looks at me earnestly.
+        
+        Mr. X is just standing there
+    - BPlot == BPlotList.Seance: 
+       //Maximillian has cleared some space at the table before him, eyes closed and quietly humming as he rests his hands on the planchette of an ancient looking Oujia board. I give him a quick tap on the shoulder to get his attention, making him jump nearly out of his seat. He turns sheepishly to greet me.
+       Mr. X is supervising Maximilian, then I talk to him
+    - BPlot == BPlotList.Exorcist: 
+    //It seems that the 'Exorcist' has Maximillian convinced of a supernatural threat. Maximillian, burning sage and Bible in hand, is making rounds in the Dining Room, attempting to... well I'm not even sure what he'd be hoping to accomplish. As I catch his attention he quickly comes over, and douses me in pungent smoke. He waits for my coughing fit to end before he continues:
+        Mr. X is smirking, then I talk to him
+}
+->->
