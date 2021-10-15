@@ -6,19 +6,38 @@
         The microwave. Much like the many other appliances that line the granite countertops of this kitchen, It is mostly chrome. The front consists of a tinted window, handle, and button pad with a multitude of functions besides the numbers. A totally, ordinary, microwave.
             ~ microwave_met = true
     - else: 
-        I'm front of the microwave 
+        I'm in front of the microwave 
     }
     
-   * [Open The Microwave]
+   + [Open The Microwave]
         {CakeList.None :
             Pressing the largest button on the machine, it pops open with a *cling*. The inside of the microwave lights up. Nothing inside - as pristine as the rest of this kitchen. You close the microwave door, with nothing of interest gain.
         }
+        
+        {CakeList.Blood :
+            Pressing the frosting smudged button, it pops open with a *cling*. The inside of the microwave lights up, and there you see it, an arm!
+            
+            But not just any arm, it is the left arm of Maximillian (in cake form)!
+            
+            "Someone, or something, must've put this piece of cake in here for whatever reason. You close the microwave - leaving the arm inside.
+        }
+        
     -> Microwave
     
-    * [Inspect The Microwave]
-        {CakeList.None :
+    + [Inspect The Microwave]
+        {CakeList.None  :
             Looking at the microwave, nothing has changed. It is as clean as it was the first time.
         }
+        
+        {CakeList.Blood :
+            Looking at the microwave again, at first you don't notice anything you haven't before. But then, something catches your eye. On the handle and large button of the microwave, you notice a smudge.
+            
+            Upon further inpection, you realize that it is cake frosting!
+            
+            "Hmm, whoever (or whatever) is responsible for defacing that cake must've been here recently. I must further investigate"
+        }
+            
+        
     -> Microwave
     
    // -- RETURN -- 

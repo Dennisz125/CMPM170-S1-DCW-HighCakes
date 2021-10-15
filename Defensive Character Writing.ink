@@ -20,7 +20,7 @@ INCLUDE IntroRooms
     VAR BPlot = BPlotList.None
     
     LIST CakeList = None, Some, Blood, Trail, RaccoonIn
-    VAR Cake = CakeList.None
+    VAR Cake = CakeList.Blood
     VAR CakeState = 4
     
     VAR Time = 1700 //Military time
