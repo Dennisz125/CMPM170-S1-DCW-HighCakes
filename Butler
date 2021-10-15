@@ -9,7 +9,7 @@
     
     
     // -- WHO --
-    * [Butler] "Who are you, exactly?"
+    * ["Who are you?"] "Who are you, exactly?"
         {Cake == CakeList.Trail or Cake == CakeList.RaccoonIn: 
         "Hoh hoh. Is it not clear? I am the butler of this estate. I thought it would be apparent to a pretend detective such as yourself."
         - else: 
@@ -17,7 +17,7 @@
         }
         The Butler stares down at me, sharpening a chef's knife that I assume originated from the kitchen. I have a difficult time assessing whether he is annoyed with me or simply tired of the whole ordeal. 
         Whatever he is, he's wasting my time. I need to get down to business. 
-            ** [Name] "Haven't heard your name yet. Care to enlighten me?"
+            ** ["What's your name?"] "Haven't heard your name yet. Care to enlighten me?"
                 "I do not know why you insist upon asking questions in such a manner... But I will humor you. I am Bartholomew Murderman.
                 ...Aha. Of course, that last bit was a jest, detective. I digress. Most people simply refer to me as 'The Butler.' You may do the same." 
             ~ butler_who = true 
@@ -25,21 +25,21 @@
     
     
     // -- HOST -- 
-    * {butler_who} [Host] "So, uh, how well acquainted are you with Maximilian?"
+    * {butler_who} ["What do you know about Maximilian?"] "So, uh, how well acquainted are you with Maximilian?"
         "You're joking, yes? I am his butler, or have you already forgotten?"
-            ** [Party] "Do you know why Maximilian has prepared this gathering?" 
+            ** ["What is the party for?"] "Do you know why Maximilian has prepared this gathering?" 
             "Is it not obvious? He truly loves his dear friend... Kidding, of course. If you are so very interested in the truth, I might allow you to hear some of it. 
             Sir Maximilian has become quite the paranoiac, seeing ghosts in his halls... But you shouldn't put so much stock in rumors, right, Detective? Why, after all, would you trust the butler?"
             ~ butler_host = true 
                 {BPlot == BPlotList.None and butler_host and butler_who:
-                    ***  [Haunting] "Max thinks his house is haunted?" 
+                    ***  ["Max thinks his house is haunted?"] "Max thinks his house is haunted?" 
                         "That is one way of putting it... Hm? What is that behind you, detective? You haven't done anything to rouse the ire of a spirit, now have you?
                         ...But, oh, you needn't worry on that. He'll be holding a seance later this evening, he's trying to cleanse the place. Ask someone else about it. I am weary of the subject." 
                         <i>If Max was having problems... why didn't he tell me about it?</i>
                         ~ BPlot = BPlotList.Seance 
                         ++++ -> Butler 
                 - else:
-                    ***  [Seance] "So I've heard. What do you think of all this flimflammery? I suppose I've given away my feelings on the subject." 
+                    ***  ["I know about the seance."] "So I've heard. What do you think of all this flimflammery? I suppose I've given away my feelings on the subject." 
                     "Oh, I agree. I have cautioned my employer against such endeavors... But who am I to decide on a subject that clamors at one's heart so? If it puts Sir Maximilian's mind at ease, perhaps all this pageantry is worth it." 
                         ++++ -> Butler 
                 }
@@ -48,7 +48,7 @@
     
     // -- EXORCIST -- 
     // TODO this could possibly give the player a single variable to reflect that they know the exorterminator has two jobs, but we don't have anything for that right now 
-    * {butler_who} [Exorcist] "Tell me what you know about this 'exorcist' character." 
+    * {butler_who} ["Who is the exorcist?"] "Tell me what you know about this 'exorcist' character." 
         "To speak candidly, and a touch unkindly, I must say I loathe the man's presence."
         The Butler shudders, the scrape of the knife more and more grating. 
         "I hear he operates as an exterminator as well. Any unwelcome rodents in our home had best be on guard." 
@@ -57,7 +57,7 @@
     
     
     // -- INTRUDER -- 
-    * {RaccoonKnowledge == RaccoonKnowledgeList.OutsideInfluence and butler_who} [Intruder] "I've discovered that someone broke into the mansion. Would you happen to have any information on this?" 
+    * {RaccoonKnowledge == RaccoonKnowledgeList.OutsideInfluence and butler_who} ["There's an intruder."] "I've discovered that someone broke into the mansion. Would you happen to have any information on this?" 
         "Broke in? Under my watchful eye? <i>Hoh!</i> Entirely reasonable. It really wouldn't be so difficult for a mysterious stranger to slip inside and give you a good stab in the back. 
         But, jesting aside... Thank you for informing me. I will look out for any intruders... You know, Sir Maximilian says that I've eyes on the back of my head. Would you like to see?" 
         ~ butler_informed = true 
@@ -101,7 +101,7 @@
 
     
     // -- HELLO -- 
-    + {butler_who} [Hello] "Just saying hello."
+    + {butler_who} ["Hello."] "Just saying hello."
         {butler_hello < 2:
             "Do you truly enjoy my company so much? I'm flattered. But you have better things to do, don't you?"
             ~ butler_hello ++
