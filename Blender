@@ -1,3 +1,18 @@
-==Blender====
-You are in the blender
-->DiningRoom
+===Blender===
+// first time seeing blender
+    {(not blender_met):
+        "I'd surely like to whip up something refreshing for us after the tragedy we've just met with. Maybe a mango smoothie?  Perhaps strawberry would be a bit insensitive after all this..." 
+        It takes you a few seconds to get used to the miriad of buttons the blender proudly displays.
+        "There. While this hurries along I should probably look around a bit. Or see how Max is doing...
+         ... After a little while you return to check on the blender.
+        I should probably check up on that blender now, shouldn't I?
+
+        You return to the kitchen which looks like the aftermath of a hurricane passing through. The drink that had been patiently waiting in the blender had been splattered all over the kitchen. The way it slowly creeps across the kitchen floor makes it seem like the culprit had been walking to the fridge. 
+        "Blimey! What on earth is this?"
+        You take a few steps back to scan the entire room. 
+        ~blender_met=true
+    - else:
+        The once pristine blender is now a sticky mess, fragrant with mangoes and bad intentions.
+    }
+    
+->Kitchen

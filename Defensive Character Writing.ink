@@ -64,6 +64,9 @@ INCLUDE IntroRooms
     // times player selects hello option 
     VAR exterminator_hello = 0
     
+    // -- Blender Variables --  
+    // whether blender has been used 
+    VAR blender_met=false
     
     ->Intro
 
