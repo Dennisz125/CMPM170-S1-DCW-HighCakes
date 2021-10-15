@@ -125,7 +125,7 @@ INCLUDE IntroRooms
         + [Talk to Butler]
             -> Butler
         + [Inspect Cake] 
-            -> ViewCake 
+            -> ViewCake
         + [Enter Kitchen] 
             -> Kitchen 
         + [DEBUG]
@@ -152,4 +152,4 @@ INCLUDE IntroRooms
         - Cake == CakeList.RaccoonIn:
             There's a raccoon in the Cake
     }
-->->
+    ->Foyer

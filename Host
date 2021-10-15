@@ -19,11 +19,13 @@
     //Final accusation, needs to send to conclusion, need conclusion.
     * {RaccoonKnowledge == RaccoonKnowledgeList.Dunnit} [I know who the 'killer' is.]
         "I've found out who the TRUE culprit is. It would seem you're overpaying your friend, the Exorterminator. A raccoon snuck into the house earlier this evening and fancied a piece of your treasured dessert."
+        ->Host
 
     //Update BPlot
     *{BPlot == BPlotList.Seance}"Um... What's with the getup, Max?"
-    "A recommendation from my devoted Exorcist. I've had quite enough of these paranormal happenings, and he says that a touch of mysticism is exactly what we need!"
-    ~BPlot = BPlotList.Exorcist
+        "A recommendation from my devoted Exorcist. I've had quite enough of these paranormal happenings, and he says that a touch of mysticism is exactly what we need!"
+        ~BPlot = BPlotList.Exorcist
+        ->Host
     
     //CakeState
     //+{CakeState < 4} "I have bad news, Max..."
