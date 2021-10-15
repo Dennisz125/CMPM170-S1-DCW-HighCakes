@@ -48,7 +48,6 @@
         The butler looks down and shakes his head. "It's a shame. I suppose I'll clean it up..."
         ** "No!"
             They both turn to me, startled by the sudden passion in my voice. I am too. 
-            *** "This is a Crime Scene!"
-                "This is an active crime scene! You must leave everything <i>exactly</i> how it is. I'll apprehend your culprit. Just leave this investigation to me." 
+            *** [Crime Scene] "This is an active crime scene! You must leave everything <i>exactly</i> how it is. I'll apprehend your culprit. Just leave this investigation to me." 
                 **** [Begin Investigation] 
                     -> Foyer 

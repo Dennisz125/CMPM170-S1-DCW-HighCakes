@@ -5,37 +5,43 @@
             ~ exterminator_met = true
             ->Asking
     - else: 
-        Mr. X: {GetExterminatorQuotes()}
+        {GetExterminatorQuotes()}
         ->Asking
 }
 
 ===Asking===
 // --Who--
 * {not exterminator_who} [Who are you?]
-    Who are you to ask? You are the miserable speck of dust, the little brown furry rotten rodent, the soiled soul, the muddy mugler! I am the one licensed to eliminate evel spirits by the government of the United Nations. A man, free to exorcise at will!
+   " Who are you to ask? You are the miserable speck of dust, the little brown furry rotten rodent, the soiled soul, the muddy mugler! I am the one licensed to eliminate evel spirits by the government of the United Nations. A man, free to exorcise at will!"
     ~exterminator_who = true
     ->Asking
 
 // --Finding the Ghost
 //None, Seance, Exorcist, Conclusion
 * {BPlot == BPlotList.None} [What do you think?]
-    The house is haunted, I’m telling you! I know it in my gut!
+    "The house is haunted, I’m telling you! I know it in my gut!"
     ->Asking
 * {BPlot == BPlotList.Seance} [What's with the layout?]
-    Remove all distractions… Lower the light.. Each of us should be able to concentrate…
-    Feel roots growing from their feet...
+    "Remove all distractions… Lower the light.. Each of us should be able to concentrate…
+    Feel roots growing from their feet..."
     ->Asking
 * {BPlot == BPlotList.Exorcist} [Are you sure that it's working]
-    Be quiet! I feel spirits, I see spirits. I am surrounded by white light, I am lifting, my spirit is connected to all others.. The spirit world, I am ready for you!
+    "Be quiet! I feel spirits, I see spirits. I am surrounded by white light, I am lifting, my spirit is connected to all others.. The spirit world, I am ready for you!"
     //Add bit about finding ghost
     ~BPlot = BPlotList.FoundGhost
     ->Asking
-// {BPlot == BPlotList.FoundGhost && RaccoonKnowledge = RaccoonKnowledgeList.InHouse}
+* {BPlot == BPlotList.FoundGhost && RaccoonKnowledge != RaccoonKnowledgeList.InHouse} [I know that it was a raccoon]
+    "I don't believe you that a raccoon who did it. I found the ghost and I'll prove it to you!"
+    I need to find that raccoon is in the house.
+    ->Asking
+ * {BPlot == BPlotList.FoundGhost && RaccoonKnowledge == RaccoonKnowledgeList.InHouse} [I know that it was a raccoon]
+    "Raccoon is the ghost!" As he said excitedly. 
+    ->Asking
+    
 // 
 // 
 //* {BPlot == BPlotList.Conclusion} [I know what's really going on here]
-    
-    ->Asking
+//    ->Asking
 
 // --Conclusion
 
