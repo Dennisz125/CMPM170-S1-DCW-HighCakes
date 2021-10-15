@@ -10,33 +10,59 @@
     }
     
    + [Open The Microwave]
-        {CakeList.None :
+        {Cake == CakeList.None :
             Pressing the largest button on the machine, it pops open with a *cling*. The inside of the microwave lights up. Nothing inside - as pristine as the rest of this kitchen. You close the microwave door, with nothing of interest gain.
         }
         
-        {CakeList.Blood :
-            Pressing the frosting smudged button, it pops open with a *cling*. The inside of the microwave lights up, and there you see it, an arm!
+        {Cake == CakeList.Blood :
+            Pressing the frosting smudged button, it pops open with a *cling*. The inside of the microwave lights up, and there you see it, an head!
             
-            But not just any arm, it is the left arm of Maximillian (in cake form)!
+            But not just any old dome, it is the head of Maximillian (in cake form)!
             
-            "Someone, or something, must've put this piece of cake in here for whatever reason. You close the microwave - leaving the arm inside.
+            "Someone, or something, must've put this piece of cake in here for whatever reason. You close the microwave - leaving the head inside.
         }
+        
+        {Cake == CakeList.Trail :
+            Pressing the cake smeared button, it opens with a *cling*. The inside if the microwave lights up.
+            
+            "Whats this ?! The head is gone. All that's left are crumbs and frosting... crumbs and frosting going somewhere."
+            
+            You close  the microwave door, with the realization that there is now a trail of crumb and frosting.
+        }
+            
         
     -> Microwave
     
     + [Inspect The Microwave]
-        {CakeList.None  :
+        {Cake == CakeList.None  :
             Looking at the microwave, nothing has changed. It is as clean as it was the first time.
         }
         
-        {CakeList.Blood :
+        {Cake == CakeList.Blood :
             Looking at the microwave again, at first you don't notice anything you haven't before. But then, something catches your eye. On the handle and large button of the microwave, you notice a smudge.
             
             Upon further inpection, you realize that it is cake frosting!
             
             "Hmm, whoever (or whatever) is responsible for defacing that cake must've been here recently. I must further investigate"
         }
+        {Cake == CakeList.Trail : 
+            Looking at the microwave, something is already clearly amiss. The few smudges that were there before have seemingly multiplied and started to invade the rest of the micrwave and even the surrounding granite. Not only that, but there are now cake crumbs all over the place.
             
+            Upon closer inspection, you notice something else. Some of the smudges have started to resemble prints...
+            
+            "Very interesting, maybe we aren't dealing with a spirit after all. Maybe it's a critter."
+        
+        }
+    -> Microwave
+    
+    * {Cake == CakeList.Trail} [Follow the Trail]
+        With the eyes of a veteran detective, you follow the crumb and frosting. The trail takes you from the microwave, down to the black and white tiles, across the kitchen and up to the sink - and finally - to the window overlooking the estate trees.
+        
+        There, the trail ends with two very distinct prints on the edge of the window.
+        
+        " A futile attempt at trying to escape eh? Well whatever it is, it is still here, somewhere "
+        
+        
         
     -> Microwave
     

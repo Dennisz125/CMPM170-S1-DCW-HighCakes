@@ -20,8 +20,8 @@ INCLUDE IntroRooms
     VAR BPlot = BPlotList.None
     
     LIST CakeList = None, Some, Blood, Trail, RaccoonIn
-    VAR Cake = CakeList.Blood
-    VAR CakeState = 4
+    VAR Cake = CakeList.None
+    VAR CakeState = 2
     
     VAR Time = 1700 //Military time
     //Todo: Function to convert time
