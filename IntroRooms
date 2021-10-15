@@ -1,51 +1,54 @@
 === FoyerIntro ===
-    The mansion interior recalls the cold, white stone of a museum more than the warmth and furnishings of a home. The entryway is punctuated by marble statues, and a portrait of Maximilian hangs at the end of the hallway, framed in gold. However, Maximilian pays no attention to these garnishments and keeps his gaze on me.  
+    The mansion interior recalls the cold, white stone of a museum more than the warmth and comfort of a home. The entryway is punctuated by marble statues, and a portrait of Maximilian hangs at the end of the hallway, framed in gold. However, Maximilian pays no attention to these garnishments and keeps his gaze on me.  
     “Tell me, old chap, how has that old detective fling been treating you? We simply <i>must</i> catch up, it’s been too long!”
-     * ["Well..."] "Well..."
+     * "Well..."
         The butler catches the two of us from behind, saving me from explaining my own dull livelihood. 
-        "Sir, I expect you'll be pleased to know that this evening's peparations are complete." He looks me up and down before gesturing towards a grand pedestal in the center of the room. The item seated atop it is a mystery to me, hidden behind a red velvet curtain.
-        “You have my gratitude. Oh, and do take this coat.” Max turns to wink at me as he hands away my coat. "This is that cake I warned you about." 
-        "I've already seen the handiwork, and I must say it is a cake to <i>die</i> for." The butler eyes me, waiting for a response. Max slaps his shoulder, grinning at him. "Old chap, your wit simply has no end!"
+        "Sir, I expect you'll be pleased to know that this evening's preparations are complete." He looks me up and down before gesturing towards a grand pedestal in the center of the room. The item seated atop it is a mystery to me, hidden behind a red velvet curtain.
+        “You have my gratitude. Oh Bart, do take this coat.” Max turns to wink at me as he hands away my coat. "This is that cake I warned you about." 
+        The butler's stare becomes more unnerving the longer it rests on me. "I've already seen the handiwork, and I must say it is a cake to <i>die</i> for." Max slaps his shoulder, grinning at him. "Oh Bart, your wit simply has no end!"
         Max reaches the end of the hall and turns around, resting against a heavy metallic door. I smell something like strawberries. 
-        ** ["This is the kitchen?"] "This is the kitchen?"
+        ** "This is the kitchen?"
             "Now <i>there’s</i> that detective brain of yours! Come on in."
-            *** [Enter Kitchen] 
+            *** “Can’t wait…” 
                 -> KitchenIntro 
                 
                 
 === KitchenIntro === 
     Max swings the doors open, and the sweet scent of fresh pastries hits my nostrils. It's an elaborate room of black and white checkered tile and rosy pink granite, on which sits an array of newfangled appliances. A silver refrigerator boasts a visual display on its door, but I stay away. High-tech just isn't my thing. 
     “So what do you think, old chap? Take a look around, <i>mi casa es su casa</i>, and so on.”
-        * ["It's fancy."] "It's fancy, for sure." 
-            As we walk through the kitchen, the heat of the ovens is interrupted by a sharply cold breeze. 
-            "Oh, sorry about that," Max says, shutting a window that overlooks the copse beyond the mansion. "Bart must've left that open earlier." I shiver in response. 
+        * "It's fancy, for sure." 
+            As we walk through the kitchen, the heat of the ovens is interrupted by a sharp breeze. 
+            "Oh, sorry about that," Max says, shutting a window that overlooks a dense thicket of oak and pine just beyond the mansion. "Bart must've left that open earlier." I shiver in response. 
             “Next is the dining room. Come on, hurry!" I take one last look out the window, then follow. 
-            ** [Enter Dining Room] 
+            ** [Follow]
                 -> DiningRoomIntro 
                
                 
 === DiningRoomIntro === 
-    I'm hit with an aroma of delectable scents; roasted chickens, a roasted hog plus an obligatory apple-in-the-mouth, baskets of freshly baked bread, a real smorgasbord. I'm left wondering how the butler managed to clean all this up. It's terrifying, yet impressive. 
-    Max throws an arm over my shoulder, giving me a start. "Well? Is this not a feast fit for a housewarming? No expense has been spared." 
+    I'm hit with an aroma of delectable scents; roasted chickens, a roasted hog plus an obligatory apple-in-the-mouth, baskets of freshly baked bread, a real smorgasbord. I'm left wondering how the butler managed to clean all this up. It's terrifying, if not impressive. 
+    Max throws an arm over my shoulder, giving me a start. "Well? Is this not a feast fit for a housewarming? No expense spared!" 
     "If you won't eat any of this, we might just have to put a different sort of dish on the table." The butler has appeared out of nowhere; I didn't even hear the footsteps. 
     Maximilian chuckles. "You look as if you've seen a delicious ghost, old friend! Help yourself to anything you’d like." 
     * [Bread] 
         I pause for a moment, then reach for a nearby basket of bread. <i>Something hard and simple, just like a certain detective I know. Heh, heh...</i> I shove the roll in my mouth as Maximilian excitedly drags me to the next location on his grand tour. 
         "I've saved the best for last!" He looks to the butler. "We'll need some assistance!" 
-        ** [Follow] 
+        ** “You could put it that way…” 
             -> FoyerCrimeScene 
             
     
 === FoyerCrimeScene === 
-    Max gathers myself and the butler in the foyer. We stand before the pedestal. The butler grasps a cord. Max smiles at me. "Are you ready?"
-    * ["Yes."] "Yes." 
+    Max gathers myself and the butler in the foyer. We stand before the pedestal. The butler grasps a cord woven from gold. Max smiles at me. "Are you ready?"
+    *"Yes." 
         "Now, <i>pull the curtain!</i>" 
-        "As you wish." 
+        "As you wish, sir." 
         With a <i>swish</i>, the curtains are pulled aside. Max crumples to his knees, unable to avert his eyes from the grim scene in front of him. 
-        Mushy lumps of frosting sputtered onto the carpet, clotted globs of bright red strawberry jam spattered on the walls. Severed pieces of cake, toppled off the body. A nightmare. 
+        What would have once been a disturbingly accurate cake-model of Maximillian, now stands without a head. Thick strawberry preserves leave gruesome splatters down the body and across the pedestal where it stands. As the curtain pulls away several chunks of cake-Max's face fall to the ground with a <i>Splat!</i>
+        The look in Max's eyes is one of loss and despair. "But who... could have done such a thing?"
+        <i>Poor guy...</i> 
         The butler looks down and shakes his head. "It's a shame. I suppose I'll clean it up..."
-        ** ["No."] "No!"
+        ** "No!"
             They both turn to me, startled by the sudden passion in my voice. I am too. 
-            *** [Crime Scene] "This is an active crime scene. You must leave everything <i>exactly</i> how it is. I'll apprehend your culprit. Just leave this investigation to me." 
+            *** "This is a Crime Scene!"
+                "This is an active crime scene! You must leave everything <i>exactly</i> how it is. I'll apprehend your culprit. Just leave this investigation to me." 
                 **** [Begin Investigation] 
                     -> Foyer 

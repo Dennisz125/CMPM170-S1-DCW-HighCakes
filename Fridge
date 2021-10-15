@@ -3,14 +3,89 @@
     {(not fridge_met):
         I'm starting to get hungry from all this detective work. Cant think on an empty stomach. I reached towards the handle as the extorminator yells out "WAIT! I feel a prescence over there"
         *[Hold on]
-            You hear a mechanical clunks and clanks as the machine whirrs to live. You don't believe in ghosts but could the extorminator actually be right? The fridge shakes back and forth as the extorminator chants incantations in a tongue you haven't heard of. This could change everything you knew about the material world. You could win awards! You could be the best detective in th-
-            **[A voice pops up from the box]
-                Hello, how may I assist you?
-                The extorminator is astonished by what 
-                ~ fridge_met = true
-                ->Fridge
+            I hear a mechanical clunks and clanks as the machine whirrs to live. I don't believe in ghosts but could the extorminator actually be right? The fridge shakes back and forth as the extorminator chants incantations in a tongue you haven't heard of. This could change everything I know about the material world. I could win awards! I could be the best detective in th-
+            **[A female voice chimes in]
+                "Hello, how may I assist you?"
+                The voice is coming from somewhere inside the fridge.
+                "I knew I felt a prescense in this area. Let me handle this, I am the expert after all"
+                He clears his throat "*Ahem*, my name is Mr. Ex. I am master of the mystic arts, exterminator of rats, and this house's connection between the material and spiritual realms"
+                "Hello Mr. Ex. I am Athena. I am the AI attached to this food refrigeration device"
+                ***[Oh an AI]
+                    Oh, this must be one of those high-tech fridges. There's that mystery solved. However, the extorminator is still visibly astonished by this technology.
+                    He turns to me and whispers, "AI stands for Astral Individual, in case you didn't know" and turns back to the fridge
+                    "There has been a murder in this house and I was wondering if you had any information-"
+                    "I'm sorry," interrupted Athena. "I cannot give that information to you. I can however, to Master ___"
+                    ****[What?]
+                        "Master Maximilian has put you on my trusted members list. Whatever questions you have, I am at your service. How may I assist you?" 
+                        ~ fridge_met = true
+                        *****[Sweet]->Fridge
     - else: 
-        How may I assist you?
+        How else may I assist you?
     }
-
-    ->Kitchen
+    // General questions 
+    + [Who are you again?]
+        "I am Athena, the AI attached to this food refrigeration device"
+        -> Fridge
+    * [Why am I trusted?]
+        "Master Maximilian has added you because he considers you his closest friend"
+        That is sweet, no one has ever called me that before. But I must not let emotions get in the way of this investigation.
+        -> Fridge
+    * [Look inside]
+        I open up the fridge, hoping for some kind of clues. Inside there are bacon and eggs. These must have been used for the cake. //switch up based 
+        -> Fridge
+    //// -- Player Knowledge States -- temp just so I dont have to switch back and forth
+    // LIST RaccoonKnowledgeList= NotAware, OutsideInfluence, InHouse, Dunnit
+    // VAR RaccoonKnowledge = RaccoonKnowledgeList.NotAware
+    // LIST BPlotList= None, Seance, Exorcist, Conclusion
+    // VAR BPlot = BPlotList.None
+    // LIST CakeList = None, Some, Blood, Trail, RaccoonIn
+    // VAR Cake = CakeList.None
+    
+    //Camera (Advances raccoon knowledge)
+    + {RaccoonKnowledge == RaccoonKnowledgeList.NotAware} [What exactly can you do?]
+        "I can help with any food-related needs. I have been equipped with sensors inside me that track exactly how much food there is. I also track eating habits of individual people"
+        ** [Cameras?]
+            "Yes I have cameras on the front facing door for face recognition and other purposes"
+            That is somewhat unnerving and seems a bit over the top for a fridge. But hold on a second... those cameras may have recorded the culprit red handed!
+            ***[Have you seen anything suspicious today?]
+                This could give you the answers you have been waiting for. It could be anyone: the butler, the exterminator, maybe in some kind of twist it was your best friend Max all along!
+                "I have recorded unusual movements, would you like to see the footage I captured?"
+                ****[Absolutely]
+                    ->Fridge
+        ** [Oh thats neat]
+            ->Fridge
+    * {RaccoonKnowledge == RaccoonKnowledgeList.OutsideInfluence} [Any idea what has been moving through the house?]
+        "My outside cameras have sensed movement of small figures in the kitchen"
+        **[Small creatures?]
+            "Yes, and the movement data from the other cameras in the house suggests that they are still in the house"
+            A figure? It makes sense now how Max suspects there's a ghost. Although I am still not convinced by Mr. X.
+            ~RaccoonKnowledge = RaccoonKnowledgeList.InHouse
+            -> Fridge
+    * {RaccoonKnowledge == RaccoonKnowledgeList.InHouse} [Do you know where the creatures are?]
+        "Unfortunately, my connection to the rest of the house as of this moment has been cut off. Though I do have information from the cameras before my wires got cut. Unfortunately I can not help you"
+        
+        -> Fridge
+    * {RaccoonKnowledge == RaccoonKnowledgeList.Dunnit} [I figured out the ]
+    
+        -> Fridge
+    //Cake
+    * {Cake == CakeList.None} [What do you know about the cake?]
+    
+        -> Fridge
+    
+    //Exorcism
+    * {BPlot == BPlotList.None} [What do you know about the host?]
+    
+        -> Fridge
+        
+    * {BPlot == BPlotList.Seance} 
+        -> Fridge
+    
+    * {BPlot == BPlotList.Exorcist}
+        -> Fridge
+    
+    * {BPlot == BPlotList.Conclusion}
+        -> Fridge
+    
+    + [Leave]
+        ->Kitchen
