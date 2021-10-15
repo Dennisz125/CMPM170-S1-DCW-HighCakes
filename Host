@@ -55,7 +55,7 @@
         "We're in capable hands!"
         ++-> Talk
 
-    *{RaccoonKnowledge == RaccoonKnowledgeList.Dunnit and Cake != CakeList RaccoonIn} "It seems a raccoon got in the house earlier, I believe this furry bandit may be the one who killed the cake."
+    *{RaccoonKnowledge == RaccoonKnowledgeList.Dunnit and Cake != CakeList.RaccoonIn} "It seems a raccoon got in the house earlier, I believe this furry bandit may be the one who killed the cake."
         "Nonesense! Mr. X is more than just a capable exorcist, but also my exterminator. He's purged this home of spirit and pest alike! Oh no, my friend, I'll believe this ridiculous tale when I see it. A raccoon, <i>HA!</i>"
         <i>Max seems thoroughly convinced of a supernatural threat. I guess I'll have to find the frosting-covered critter to make him see reason</i>
         ++-> Talk
