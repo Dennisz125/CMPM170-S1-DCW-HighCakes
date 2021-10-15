@@ -74,8 +74,9 @@ INCLUDE IntroRooms
 === Intro ===
     The brisk autumn air nips at the crevices and creases of my weathered face as I recheck the notes I had written to myself earlier this morning. A coffee stain conceals the latter half of the address. 
     <i>This must be the place.</i>
-    I trudge up the driveway of my childhood friend’s newly acquired mansion, my footsteps crunching against the hard gravel. A man dressed up in a tuxedo and top hat walks out to greet me, arms outstretched. 
-    "Old sport, you've arrived! Come in, come in. I've an extravagant cake prepared, just for the occasion." 
+    I trudge up the driveway of my childhood friend’s newly acquired mansion, my footsteps crunching against the hard gravel. A surprisingly familiar man dressed up in a tuxedo and top hat walks out to greet me, arms outstretched. 
+    "Old sport, you've arrived! Come in, come in. I've an extravagant cake prepared, just for the occasion."
+    <i>Maximillian?</i>
     * [- skip intro (DEBUG) -] 
         -> Foyer 
     * ["Don't call me that."] "Don't call me that." 
@@ -91,7 +92,7 @@ INCLUDE IntroRooms
 
 === Kitchen === 
     The refined warmth of the kitchen is overshadowed by the stench of a crime. My unshakeable instincts tell me a clue awaits here, ready to reveal the identity of the culprit.  
-    The countertops house a blender and microwave. A high-tech fridge has seated itself in the corner. 
+    The countertops house a blender and microwave. A high-tech fridge gently hums away in the corner. 
         + [Investigate Blender]
             -> Blender
         + [Investigate Microwave]
@@ -109,8 +110,8 @@ INCLUDE IntroRooms
 
 
 === DiningRoom === 
-    After seeing what happened to that poor cake... I couldn't imagine having an appetite. The food laid out in this room makes me ill. I'd better catch that culprit quick. 
-    Max is here, and so is that exorcist... 
+    After seeing what happened to that poor cake... I couldn't imagine having an appetite. The food laid out in this room makes me ill... at least for now. I'd better catch that culprit quick. 
+    Max is here, and so is that 'specialist' of his, Mr. X... 
         + [Talk to Host]
             -> Host
         + [Talk to Exorcist]
@@ -122,7 +123,7 @@ INCLUDE IntroRooms
 
 
 === Foyer ===
-    The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. 
+    The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. Delicious.
     The butler stands in the hall. 
     What remains of the cake lays on the pedestal. The scene is hidden behind the curtain, for Max's sanity. <i>Do I take a peak?</i>
         + [Talk to Butler]
@@ -147,12 +148,12 @@ INCLUDE IntroRooms
         - Cake == CakeList.None:
             Cake is Full
         - Cake == CakeList.Some:
-            Cake lost some toppings
+            The once beautiful cake now stands without a head, chunks of frosting and strawberry filling still dripping from the wound.
         - Cake == CakeList.Blood:
-            Cake lost some pieces
+            Smears and splatters of the cake filling are all over the it and the pedestal, emenating from a messy hole where it's heart would be.
         - Cake == CakeList.Trail:
-            Crumbs from the Cake is gone
+            A trail of frosting and gooey filling leads away from the cake pedestal, leading to the kitchen door...
         - Cake == CakeList.RaccoonIn:
-            There's a raccoon in the Cake
+            Watching the stomach of the headless cake squirm makes me nauseous. I need to get Max in here, quick.
     }
     ->Foyer
