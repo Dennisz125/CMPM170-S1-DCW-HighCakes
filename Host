@@ -1,6 +1,6 @@
 ===Host===
 //TODO: different intro depending on current Bplot state?
-//Host updates player on cake state? Or vice versa?
+//Host updates player on cake state?
 
 //---Intro--- content should depend on Bplot state
 
@@ -15,25 +15,64 @@
     }
     
     "Any word, old friend?"
+    -> Talk
+
+    ===Talk===
 
     //Final accusation, needs to send to conclusion, need conclusion.
-    * {RaccoonKnowledge == RaccoonKnowledgeList.Dunnit} [I know who the 'killer' is.]
-        "I've found out who the TRUE culprit is. It would seem you're overpaying your friend, the Exorterminator. A raccoon snuck into the house earlier this evening and fancied a piece of your treasured dessert."
-        ->Host
+    * {RaccoonKnowledge == RaccoonKnowledgeList.Dunnit and CakeList == CakeList.RaccoonIn} [I've solved the murder!]
+        "I've solved the case! It would seem you're overpaying your friend, the Exorterminator over there. A raccoon snuck in through the kitchen window earlier. Seems like it found your cake just as appetizing as the rest of us."
+        Maximillian looks at me with disbelief in his eyes.
+        "If you don't believe me I'll show you, old friend"
+        ++-> ViewCake
 
     //Update BPlot
-    *{BPlot == BPlotList.Seance}"Um... What's with the getup, Max?"
+    *{BPlot == BPlotList.Seance} "Um... What's with the getup, Max?"
         "A recommendation from my devoted Exorcist. I've had quite enough of these paranormal happenings, and he says that a touch of mysticism is exactly what we need!"
-        ~BPlot = BPlotList.Exorcist
-        ->Host
-    
-    //CakeState
-    //+{CakeState < 4} "I have bad news, Max..."
-    
-    
-    +"Nothing new yet, Max" -> Host
+        ++-> Talk
 
+    //
+    *{BPlot == BPlotList.Exorcist} I'm starting to get really tired of all this 'mysticism'. "Contacting the dead not enough for you, eh Max?"
+        He seems a little shocked at my exasperation. "Now, now, Old Pal. I pay Mr. X good money for his services, you ought to have a little bit more <i>faith</i> in his skills." Maximillian can't help but grin as he gestures to the Bible in his hand.
+        <i>Well, at least we know he'll survive this ordeal with a sense of humor in tact...</i>
+        ++-> Talk
 
-//---Return---
-+[-Return-]
-->DiningRoom
+    //Ask for more info about Butler
+    *{butler_who == true}"Tell me more about your Butler. Mr.... Murderman."
+        "Bartholomew? He can seem a bit cold, but he's been a butler to my family for generations. I trust him completely."
+        ++-> Talk
+
+    //Ask for more info about Exterminator
+    *{exterminator_who == true}"Tell me more about your friend there. Mr. X, was it?"
+        "Ah, yes! Since I was a boy the halls of this place have given me the chills. Since I came into possession of the estate it only got worse, so I sought the assistance of a specialist. He quickly confirmed the presence of malevolent spirits here, but he assures me it's nothing a regular cleansing can't solve."
+        Mr. X's presence here seems to Maximillian at ease. Unfortunately, that would make him the only one...
+        ++-> Talk
+
+    //Investigation
+    *{RaccoonKnowledge == RaccoonKnowledgeList.OutsideInfluence and Cake == CakeList.Some} "I found evidence of an intruder in your home, Max. Maybe the killer is someone else entirely..."
+        "Or some<i>THING</i>! I knew Mr. X was onto something! Don't you worry old chap, you can leave this to the professional!"
+        Maximillian looks over to Mr. X, who is currently devouring a chicken leg.
+        "We're in capable hands!"
+        ++-> Talk
+
+    *{RaccoonKnowledge == RaccoonKnowledgeList.Dunnit and Cake != CakeList.RaccoonIn} "It seems a raccoon got in the house earlier, I believe this furry bandit may be the one who killed the cake."
+        "Nonesense! Mr. X is more than just a capable exorcist, but also my exterminator. He's purged this home of spirit and pest alike! Oh no, my friend, I'll believe this ridiculous tale when I see it. A raccoon, <i>HA!</i>"
+        <i>Max seems thoroughly convinced of a supernatural threat. I guess I'll have to find the frosting-covered critter to make him see reason</i>
+        ++-> Talk
+
+    //Cake updates, let him know the cake got worse
+    *{Cake == CakeList.Blood or Cake == CakeList.Trail} "I have bad news, Max..."
+        Maximillian gives a pitiable look. I almost feel bad for having to break this news to him...
+        "About the cake... It seems the killer struck again."
+        Max lets out a wail, throwing himself around me and sobbing into my shoulder.
+        <i>Oh geez</i>
+        "My poor, absolutely delicious visage! My party has been murdered along with it! Tell me you can catch the killer, old chap!"
+        I grab him by the shoulders and firmly remove his snotty face from my jacket.
+        <i>I hope that comes out later...</i>
+        "Listen, Max. We've been friends for as long as I can remember, and nobody gets away with taking your head off while I'm around."
+        He seems to cheer up a bit, wiping away snot and tears on the sleeve of his tuxedo. "If I ever get brutally murdered I want you to be the one on the case"
+        "Um... Thanks?"
+        ++->Talk
+    
+    //Return
+    +"Nothing new yet, Max" -> DiningRoom
