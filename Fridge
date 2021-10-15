@@ -62,29 +62,30 @@
             ~RaccoonKnowledge = RaccoonKnowledgeList.InHouse
             -> Fridge
     * {RaccoonKnowledge == RaccoonKnowledgeList.InHouse} [Do you know where the creatures are?]
-        "Unfortunately, my connection to the rest of the house as of this moment has been cut off. Though I do have information from the cameras before my wires got cut. Unfortunately I can not help you"
-        
+        "Unfortunately, my connection to the rest of the house as of this moment has been cut off. Though I do have information from the cameras before my wires got cut. I'm sorry I can not help you"
         -> Fridge
-    * {RaccoonKnowledge == RaccoonKnowledgeList.Dunnit} [I figured out the ]
-    
+    * {RaccoonKnowledge == RaccoonKnowledgeList.Dunnit} [I figured out the culprit]
+        
         -> Fridge
     //Cake
     * {Cake == CakeList.None} [What do you know about the cake?]
     
         -> Fridge
-    
     //Exorcism
     * {BPlot == BPlotList.None} [What do you know about the host?]
-    
+        "Maximillian is my main owner"
         -> Fridge
         
-    * {BPlot == BPlotList.Seance} 
+    * {BPlot == BPlotList.Seance} [Maximillian is holding a seance]
+        "Very good"
         -> Fridge
     
-    * {BPlot == BPlotList.Exorcist}
+    * {BPlot == BPlotList.Exorcist} [Mr. X is scamming Maximilian]
+        "Thank you for informing me I will res"
         -> Fridge
     
-    * {BPlot == BPlotList.Conclusion}
+    * {BPlot == BPlotList.Conclusion} [Mr. X thinks the raccoon is a ghost]
+        "Very good"
         -> Fridge
     
     + [Leave]

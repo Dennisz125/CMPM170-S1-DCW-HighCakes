@@ -13,7 +13,7 @@ INCLUDE IntroRooms
 
 === Init === 
     // -- Player Knowledge States -- 
-    LIST RaccoonKnowledgeList= NotAware, OutsideInfluence, Dunnit
+    LIST RaccoonKnowledgeList= NotAware, OutsideInfluence, InHouse, Dunnit
     VAR RaccoonKnowledge = RaccoonKnowledgeList.NotAware
 
     LIST BPlotList= None, Seance, Exorcist, Conclusion
