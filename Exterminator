@@ -27,8 +27,12 @@
     ->Asking
 * {BPlot == BPlotList.Exorcist} [Are you sure that it's working]
     Be quiet! I feel spirits, I see spirits. I am surrounded by white light, I am lifting, my spirit is connected to all others.. The spirit world, I am ready for you!
+    //Add bit about finding ghost
+    ~BPlot = BPlotList.FoundGhost
     ->Asking
-// {BPlot == BPlotList.FoundGhost}
+// {BPlot == BPlotList.FoundGhost && RaccoonKnowledge = RaccoonKnowledgeList.InHouse}
+// 
+// 
 //* {BPlot == BPlotList.Conclusion} [I know what's really going on here]
     
     ->Asking

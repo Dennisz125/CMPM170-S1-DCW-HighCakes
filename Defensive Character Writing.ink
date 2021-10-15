@@ -16,7 +16,7 @@ INCLUDE IntroRooms
     LIST RaccoonKnowledgeList= NotAware, OutsideInfluence, InHouse, Dunnit
     VAR RaccoonKnowledge = RaccoonKnowledgeList.NotAware
 
-    LIST BPlotList= None, Seance, Exorcist, Conclusion
+    LIST BPlotList= None, Seance, Exorcist, FoundGhost, Conclusion
     VAR BPlot = BPlotList.None
     
     LIST CakeList = None, Some, Blood, Trail, RaccoonIn
