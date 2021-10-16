@@ -93,7 +93,7 @@ INCLUDE IntroRooms
     ~Time += 0.25
     Time: {UpdateTime()} 
     {UpdateCake()}
-    {Time >= 4:
+    {Time >= 6:
         -> Failure
     }
     The refined warmth of the kitchen is overshadowed by the stench of a crime. My unshakeable instincts tell me a clue awaits here, ready to reveal the identity of the culprit.  
@@ -118,7 +118,7 @@ INCLUDE IntroRooms
     ~Time += 0.25
     Time: {UpdateTime()} 
     {UpdateCake()}
-    {Time >= 4:
+    {Time >= 6:
         -> Failure
     }
     After seeing what happened to that poor cake... I couldn't imagine having an appetite. The food laid out in this room makes me ill... at least for now. I'd better catch that culprit quick. 
@@ -137,7 +137,7 @@ INCLUDE IntroRooms
     ~Time += 0.25
     Time: {UpdateTime()} 
     {UpdateCake()}
-    {Time >= 4:
+    {Time >= 6:
         -> Failure
     }
     The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. Delicious.
@@ -162,21 +162,21 @@ INCLUDE IntroRooms
     {(Time%1 * 60) == 0:
          ~ return (FLOOR(Time) + 4) + ":00 o' clock"
     -else:
-         ~ return (FLOOR(Time) + 4) + ":" + (Time%1 * 60) + " o clock"
+         ~ return (FLOOR(Time) + 4) + ":" + (Time%1 * 60) + " o' clock"
     }
 
 === function UpdateCake() ===
     {
-    -(Time < 0.5):
+    -(Time < 1):
         ~Cake = CakeList.Some
         ~ return
-    -(Time >= 0.5 and Time < 1):
+    -(Time >= 1 and Time < 2):
         ~Cake = CakeList.Blood
         ~ return
-    -(Time >= 1 and Time < 1.5):
+    -(Time >= 2 and Time < 3):
         ~Cake = CakeList.Trail
         ~ return
-    -(Time >= 1.5 and Time < 4):
+    -(Time >= 3 and Time < 6):
         ~Cake = CakeList.RaccoonIn
         ~ return
 

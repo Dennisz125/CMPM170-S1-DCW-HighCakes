@@ -63,7 +63,7 @@
             -> Fridge
         //Cake
         * [What do you know about the cake?]
-            
+            "I helped Master Maximillian construct the cake this morning. Using the ingredients that were inside of me, I walked him through step by step how to make the cake of his dreams."
             -> Fridge
         //Exorcism
         * {BPlot == BPlotList.None} [What do you know about the host?]
@@ -75,7 +75,7 @@
             -> Fridge
         
         * {BPlot == BPlotList.Exorcist} [Mr. X is scamming Maximilian]
-            "Thank you for informing me I will restrict his access from now on"
+            "Thank you for informing me. I will restrict his access from now on"
             -> Fridge
         
         * {BPlot == BPlotList.Conclusion} [Mr. X thinks the raccoon is a ghost]

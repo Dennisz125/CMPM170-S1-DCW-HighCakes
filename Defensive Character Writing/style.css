@@ -92,6 +92,7 @@ h3.written-in-ink {
 }
 
 p {
+    font-family: Courier New, monospace;
     font-size: 18pt;
     opacity: 0;
     color: black;
