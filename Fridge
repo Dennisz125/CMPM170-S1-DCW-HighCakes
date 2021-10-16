@@ -51,6 +51,7 @@
                 This could give you the answers you have been waiting for. It could be anyone: the butler, the exterminator, maybe in some kind of twist it was your best friend Max all along!
                 "I have recorded unusual movements, would you like to see the footage I captured?"
                 ****[Absolutely]
+                     ~RaccoonKnowledge = RaccoonKnowledgeList.OutsideInfluence
                     ->Fridge
         ** [Oh thats neat]
             ->Fridge
