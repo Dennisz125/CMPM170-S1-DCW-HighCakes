@@ -66,8 +66,7 @@ INCLUDE IntroRooms
     
     // -- Blender Variables --  
     // whether blender has been used 
-    VAR blender_met=false
-    
+    VAR blender_met = false
     ->Intro
 
 
@@ -125,7 +124,7 @@ INCLUDE IntroRooms
 === Foyer ===
     The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. Delicious.
     The butler stands in the hall. 
-    What remains of the cake lays on the pedestal. The scene is hidden behind the curtain, for Max's sanity. <i>Do I take a peak?</i>
+    What remains of the cake lays on the pedestal. The scene is hidden behind the curtain, for Max's sanity. <i>Do I take a peek?</i>
         + [Talk to Butler]
             -> Butler
         + [Inspect Cake] 
@@ -157,3 +156,43 @@ INCLUDE IntroRooms
             Watching the stomach of the headless cake squirm makes me nauseous. I need to get Max in here, quick.
     }
     ->Foyer
+
+=== Ending ===
+    Max begins to protest my claims of an aberrant trash bandit in the house, but I’ve had enough of this supernatural nonsense. I grab Max by the collar of his tuxedo.
+    “Hey! No need for violence, old chap!”
+    I pull him through the elaborately carved doors into the foyer. Mr. X seems to be enjoying the show and follows suit.
+    ”While you’ve spent the evening contacting the dead and trying to wish your problems away, I found <i>THIS</i>” 
+    I stop with Max in front of the curtains of the cake’s pedestal. A bemused smirk sits on the butler’s face as he joins Mr. X in watching this scene unfold.
+    “Old chap--” 
+    
+    *[Pull the curtain]
+        I don’t give Maximillian any more chances to deny the truth. I give the rope a firm tug, pulling the curtains back to reveal the now thoroughly abused cake. Max gasps seeing the additional gore left by our furry friend.
+        
+        The body of the cake warps and bulges, Max looks as if he’ll be sick, and Mr. X actually was sick on the once perfect red carpet. The butler groans and rolls his eyes.
+        Amidst the commotion, the upper half of Max’s cake explodes, showering each of us with bits of fondant, icing, and a thick layer of strawberry filling. Sticking up from the remaining legs of the cake is a raccoon whose coat is now plastered by smears of red and white.
+        
+        Mr. X screams, “THEY’VE COME FOR REVENGE!”, before collapsing to the floor.
+        The butler gives a chuckle, and Max stands before the ‘murderer’ stunned and shocked.
+        In all the commotion the raccoon seems a bit startled, but makes no moves. It’s belly bulges more than Mr. X’s. It seems content where it is.
+        
+        **[“Well, Max, seems like someone really enjoyed your cake.”]
+        
+            I’m surprised to hear Maximillian start laughing. He turns and pulls me into a tight hug, and I start laughing with him. This is the friend I remember.
+            As he pulls away tears are in his eyes. “Thank you, thank you! This may not have been the housewarming I wanted, but you’ve really made something special of it!”
+            Max looks to the smug raccoon, belly full of frosting and filling.
+            “This little rascal… well we might just have a spare room for it if it. Oh, Bart, could you go and get it cleaned up?”
+            For the first time since I arrived, a smile breaks across the butler’s face. “Of course, sir. Right away.”
+            
+            Max begins to lead me back to the dining room, recalling a time in our earlier years when we would play detectives.
+            
+            “...And do you remember what you told your mother? You said, ‘Detectives don’t eat broccoli’, <i>HA!</i>”
+            
+            As he opens the door to the dining room a shrill <i>WeEeEe</i> pierces the foyer.
+            
+            “Um… sir?” Max and I turn to look at Bartholomew. In his arms lies the ‘murderer’... and a fresh litter of baby raccoons.
+            
+            “Oh.”
+
+            -> END
+
+

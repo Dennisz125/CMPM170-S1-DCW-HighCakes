@@ -24,7 +24,7 @@
         "I've solved the case! It would seem you're overpaying your friend, the Exorterminator over there. A raccoon snuck in through the kitchen window earlier. Seems like it found your cake just as appetizing as the rest of us."
         Maximillian looks at me with disbelief in his eyes.
         "If you don't believe me I'll show you, old friend"
-        ++-> ViewCake
+        ++-> Ending
 
     //Update BPlot
     *{BPlot == BPlotList.Seance} "Um... What's with the getup, Max?"

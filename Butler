@@ -66,30 +66,30 @@
     
     // -- CAKE -- 
     // none 
-    * {Cake == CakeList.None and butler_who} [Cake] "I heard from my friend that cake will be served."
+    * {Cake == CakeList.None and butler_who} ["I heard from my friend that cake will be served."]
         "You are correct. 
         ...Were you expecting me to elaborate? Hmph. Very well. The cake has been created in Sir Maximilian's image. You should see it. It's quite... something."
         The Butler's eyes fall down to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
         "I'll need something sharp to cut it with," he says, holding up the knife for me to get a closer look.  
         ++ -> Butler
     // some 
-    * {Cake == CakeList.Some and butler_who} [Cake - Crime Scene] "It's a tragedy." 
+    * {Cake == CakeList.Some and butler_who} ["It's a tragedy."]
         "I suppose... Were you expecting some elaboration? Very well. The cake had been created in Sir Maximilian's image. It truly was a sight to behold... And now?
         The Butler's eyes fall to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
         "Why, there is nothing for this little instrument to <i>cut</i> into. And isn't that the real tragedy?" He holds the knife close to my face, allowing me to inspect its detail. He's right; it doesn't look recently used... But the murder didn't look like a clean cut anyway.  
         ++ -> Butler
     // blood 
-    * {Cake == CakeList.Blood and butler_who} [Cake - Jelly] "The jelly from the cake is splattered all over." 
+    * {Cake == CakeList.Blood and butler_who} ["The jelly from the cake is splattered all over."]
         "Oh, I know. A bit of a bloody mess. Let's hope <i>you</i> don't end up like that, hm? Snooping around carries its dangers." 
         ++ -> Butler 
     // trail 
-    * {Cake == CakeList.Trail and butler_who} [Cake - Trail] "There's a trail of jelly that leads straight to the kitchen." 
+    * {Cake == CakeList.Trail and butler_who} ["There's a trail of jelly that leads straight to the kitchen."]
         "You think you've found the trail left by your culprit? Careful... Red jelly is slippery, and the floor of the kitchen is so awfully cold and hard... Ah, and those heavy doors... It's quite possible no one will hear a thing." 
         ** [Question Further] "But you must've seen <i>something</i>. You've been standing in this same spot the whole time. You haven't taken your eyes off of the scene." 
             "That may be so... But have you heard, detective? Every so often, a man must trek to a lavatory to relieve himself. Needs must, and all. I apologize for failing to meet your standards for an adequate sentry." This response is woefully unconvincing, yet completely predictable. 
             +++ -> Butler 
     // raccoon in 
-    * {Cake == CakeList.RaccoonIn and butler_who} [Cake - Update] "Haven't seen anything new with our victim." 
+    * {Cake == CakeList.RaccoonIn and butler_who} ["Haven't seen anything new with our victim."]
         "Really? Just a moment ago, I saw something squirming around in the cake... Why are you looking at me like that? 
         {butler_informed == true: 
             ...Ah, you are suspecting it is our little interloper, are you not? Well, go on. I certainly won't stop you." 
