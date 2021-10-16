@@ -23,9 +23,9 @@ INCLUDE IntroRooms
     VAR Cake = CakeList.None
     VAR CakeState = 2
     
-    VAR Time = 1700 //Military time
+    VAR Time = 0
     //Todo: Function to convert time
-    Time: {Time}
+    Time: -> ReturnTime ->
     //red herring for accusing appliances?
     
     
@@ -140,7 +140,10 @@ INCLUDE IntroRooms
     // Print out knowledge state
 ->->
     
+=== ReturnTime ===
 
+
+    ->->
 === ViewCake ===
     // None, Some, Blood, Trail, RaccoonIn
     {
