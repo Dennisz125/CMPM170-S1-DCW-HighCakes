@@ -29,7 +29,9 @@
             
             You close  the microwave door, with the realization that there is now a trail of crumb and frosting.
         }
-            
+         {Cake == CakeList.RaccoonIn :
+            Nothing has changed from your previous inspection, just crumbs and frosting all over.
+        }   
         
     -> Microwave
     
@@ -53,6 +55,10 @@
             "Very interesting, maybe we aren't dealing with a spirit at all. Maybe it's a critter."
         
         }
+        {Cake == CakeList.RaccoonIn :
+            Nothing has changed from your previous inspection, just crumbs and frosting all over.
+        }
+            
     -> Microwave
     
     * {Cake == CakeList.Trail} [Follow the Trail]
