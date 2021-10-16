@@ -21,11 +21,10 @@ INCLUDE IntroRooms
     
     LIST CakeList = None, Some, Blood, Trail, RaccoonIn
     VAR Cake = CakeList.None
-    VAR CakeState = 2
     
     VAR Time = 0
     //Todo: Function to convert time
-    Time: -> ReturnTime ->
+    Time: {UpdateTime()}
     //red herring for accusing appliances?
     
     
@@ -90,6 +89,9 @@ INCLUDE IntroRooms
                
 
 === Kitchen === 
+    ~Time += 0.25
+    Time: {UpdateTime()} 
+    {UpdateCake()}
     The refined warmth of the kitchen is overshadowed by the stench of a crime. My unshakeable instincts tell me a clue awaits here, ready to reveal the identity of the culprit.  
     The countertops house a blender and microwave. A high-tech fridge gently hums away in the corner. 
         + [Investigate Blender]
@@ -108,7 +110,10 @@ INCLUDE IntroRooms
             -> DEBUG
 
 
-=== DiningRoom === 
+=== DiningRoom ===
+    ~Time += 0.25
+    Time: {UpdateTime()} 
+    {UpdateCake()}
     After seeing what happened to that poor cake... I couldn't imagine having an appetite. The food laid out in this room makes me ill... at least for now. I'd better catch that culprit quick. 
     Max is here, and so is that 'specialist' of his, Mr. X... 
         + [Talk to Host]
@@ -117,13 +122,14 @@ INCLUDE IntroRooms
             -> Exterminator
         + [Kitchen]
             -> Kitchen
-        + [Foyer]
-            -> Foyer
         + [DEBUG]
             -> DEBUG
 
 
 === Foyer ===
+    ~Time += 0.25
+    Time: {UpdateTime()} 
+    {UpdateCake()}
     The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. Delicious.
     The butler stands in the hall. 
     What remains of the cake lays on the pedestal. The scene is hidden behind the curtain, for Max's sanity. <i>Do I take a peek?</i>
@@ -133,8 +139,6 @@ INCLUDE IntroRooms
             -> ViewCake
         + [Enter Kitchen] 
             -> Kitchen 
-        + [Enter Dining Room]
-            -> DiningRoom
         + [DEBUG]
             -> DEBUG
 
@@ -144,10 +148,29 @@ INCLUDE IntroRooms
     // Print out knowledge state
 ->->
     
-=== ReturnTime ===
+=== function UpdateTime() ===
+    {(Time%1 * 60) == 0:
+         ~ return (FLOOR(Time) + 4) + ":00 o' clock"
+    -else:
+         ~ return (FLOOR(Time) + 4) + ":" + (Time%1 * 60) + " o clock"
+    }
 
+=== function UpdateCake() ===
+    {
+    -(Time >= 0.50):
+        ~Cake = CakeList.Some
+        ~ return
+    -(Time >= 1):
+        ~Cake = CakeList.Blood
+        ~ return
+    -(Time >= 1.5):
+        ~Cake = CakeList.Trail
+        ~ return
+    -(Time >= 2):
+        ~Cake = CakeList.RaccoonIn
+        ~ return
+    }
 
-    ->->
 === ViewCake ===
     // None, Some, Blood, Trail, RaccoonIn
     {
@@ -174,6 +197,10 @@ INCLUDE IntroRooms
     
     *[Pull the curtain]
         I don’t give Maximillian any more chances to deny the truth. I give the rope a firm tug, pulling the curtains back to reveal the now thoroughly abused cake. Max gasps seeing the additional gore left by our furry friend.
+        
+        
+        *****************************
+        
         
         The body of the cake warps and bulges, Max looks as if he’ll be sick, and Mr. X actually was sick on the once perfect red carpet. The butler groans and rolls his eyes.
         Amidst the commotion, the upper half of Max’s cake explodes, showering each of us with bits of fondant, icing, and a thick layer of strawberry filling. Sticking up from the remaining legs of the cake is a raccoon whose coat is now plastered by smears of red and white.
