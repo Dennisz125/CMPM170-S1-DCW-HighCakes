@@ -10,7 +10,7 @@
     }
     
    + [Open The Microwave]
-        {Cake == CakeList.None :
+        {Cake == CakeList.Some :
             Pressing the largest button on the machine, it pops open with a *cling*. The inside of the microwave lights up. Nothing inside - as pristine as the rest of this kitchen. You close the microwave door, with nothing of interest gain.
         }
         
@@ -34,7 +34,7 @@
     -> Microwave
     
     + [Inspect The Microwave]
-        {Cake == CakeList.None  :
+        {Cake == CakeList.Some  :
             Looking at the microwave, nothing has changed. It is as clean as it was the first time.
         }
         
