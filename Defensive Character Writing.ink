@@ -170,7 +170,7 @@ INCLUDE IntroRooms
         ~Cake = CakeList.RaccoonIn
         ~ return
     -(Time >= 4 ):
-       // send to fail
+        -> Failure
 
     }
 
@@ -236,4 +236,18 @@ INCLUDE IntroRooms
 
             -> END
 
+===Failure===
+I’m lost in thought, considering the evidence gathered so far. Who dunnit? A commotion from the foyer breaks me out of my trance, and I rush to catch the killer.
+<i>They always return to the scene of the crime!</i>
+As I burst through the door my heart drops. The rest of the guests have arrived.
+[“Stop!”]
+Before I can keep them at bay, a crowd of swanky folks waltzes through the door. The butler, serious as always, takes their coats. Seeing the pedestal hidden behind a velvet curtain, a would-be partygoer walks up and yanks on the rope.
+Maximilian enters the room just in time to witness the shock and horror on each of their faces. One of his guests turns to him.
+“Now Maxie, when you said you’d be having a dessert to die for we thought you meant in a <i>good</i> way. This joke of yours is simply boorish!”
+The crowd gathers closer, hurling… insults I think? Before long, the foyer is empty and Maximillian looks to feel the same way. He sits beside the pedestal, head in hands.
+“Old sport… I believe the party is over. You should see yourself out now.”
+The butler appears at my side, coat in hand. A smirk makes his face even more haunting than usual.
+“Hope you’ve had a pleasant stay, until next time...detective.”
 
+-> END
+    
