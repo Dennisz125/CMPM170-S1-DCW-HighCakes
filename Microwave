@@ -25,7 +25,7 @@
         {Cake == CakeList.Trail :
             Pressing the cake smeared button, it opens with a *cling*. The inside if the microwave lights up.
             
-            "Whats this ?! The head is gone. All that's left are crumbs and frosting... crumbs and frosting going somewhere."
+             "Whats this ?! It's empty. All that's left are crumbs and frosting... crumbs and frosting going somewhere."
             
             You close  the microwave door, with the realization that there is now a trail of crumb and frosting.
         }
@@ -46,11 +46,11 @@
             "Hmm, whoever (or whatever) is responsible for defacing that cake must've been here recently. I must further investigate"
         }
         {Cake == CakeList.Trail : 
-            Looking at the microwave, something is already clearly amiss. The few smudges that were there before have seemingly multiplied and started to invade the rest of the micrwave and even the surrounding granite. Not only that, but there are now cake crumbs all over the place.
+            Looking at the microwave, something is already clearly amiss. Smudges of frosting accent the  appliance and nearby countertop. Not only that, but there are now cake crumbs all over the place.
             
             Upon closer inspection, you notice something else. Some of the smudges have started to resemble prints...
             
-            "Very interesting, maybe we aren't dealing with a spirit after all. Maybe it's a critter."
+            "Very interesting, maybe we aren't dealing with a spirit at all. Maybe it's a critter."
         
         }
     -> Microwave
