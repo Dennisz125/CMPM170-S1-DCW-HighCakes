@@ -89,7 +89,7 @@ INCLUDE IntroRooms
                
 
 === Kitchen === 
-    ~Time += 0.12
+    ~Time += 0.25
     Time: {UpdateTime()} 
     {UpdateCake()}
     The refined warmth of the kitchen is overshadowed by the stench of a crime. My unshakeable instincts tell me a clue awaits here, ready to reveal the identity of the culprit.  
@@ -111,7 +111,7 @@ INCLUDE IntroRooms
 
 
 === DiningRoom ===
-    ~Time += 0.12
+    ~Time += 0.25
     Time: {UpdateTime()} 
     {UpdateCake()}
     After seeing what happened to that poor cake... I couldn't imagine having an appetite. The food laid out in this room makes me ill... at least for now. I'd better catch that culprit quick. 
@@ -127,7 +127,7 @@ INCLUDE IntroRooms
 
 
 === Foyer ===
-    ~Time += 0.12
+    ~Time += 0.25
     Time: {UpdateTime()} 
     {UpdateCake()}
     The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. Delicious.
@@ -157,13 +157,13 @@ INCLUDE IntroRooms
 
 === function UpdateCake() ===
     {
-    -(Time >= 0.25):
+    -(Time < 0.5):
         ~Cake = CakeList.Some
         ~ return
-    -(Time >= 0.5):
+    -(Time >= 0.5 and Time < 0.75):
         ~Cake = CakeList.Blood
         ~ return
-    -(Time >= 0.75):
+    -(Time >= 0.75 and Time < 1):
         ~Cake = CakeList.Trail
         ~ return
     -(Time >= 1):
