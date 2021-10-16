@@ -117,6 +117,8 @@ INCLUDE IntroRooms
             -> Exterminator
         + [Kitchen]
             -> Kitchen
+        + [Foyer]
+            -> Foyer
         + [DEBUG]
             -> DEBUG
 
@@ -131,6 +133,8 @@ INCLUDE IntroRooms
             -> ViewCake
         + [Enter Kitchen] 
             -> Kitchen 
+        + [Enter Dining Room]
+            -> DiningRoom
         + [DEBUG]
             -> DEBUG
 
