@@ -160,10 +160,10 @@ INCLUDE IntroRooms
     -(Time >= 0.25):
         ~Cake = CakeList.Some
         ~ return
-    -(Time >= .5):
+    -(Time >= 0.5):
         ~Cake = CakeList.Blood
         ~ return
-    -(Time >= .75):
+    -(Time >= 0.75):
         ~Cake = CakeList.Trail
         ~ return
     -(Time >= 1):
