@@ -89,15 +89,25 @@
             "That may be so... But have you heard, detective? Every so often, a man must trek to a lavatory to relieve himself. Needs must, and all. I apologize for failing to meet your standards for an adequate sentry." This response is woefully unconvincing, yet completely predictable. 
             +++ -> Butler 
     // raccoon in 
-    + {CakeKnowledge == CakeList.RaccoonIn and butler_who} ["Haven't seen anything new with our victim."] "Haven't seen anything new with our victim."
+    * {CakeKnowledge != CakeList.RaccoonIn and Cake == CakeList.RaccoonIn and butler_who} ["Haven't seen anything new with our victim."] "Haven't seen anything new with our victim."
         "Really? Just a moment ago, I saw something squirming around in the cake... Why are you looking at me like that? 
-        ~RaccoonKnowledge = RaccoonKnowledgeList.Dunnit
         {butler_informed == true: 
             ...Ah, you are suspecting it is our little interloper, are you not? Well, go on. I certainly won't stop you." 
-            ~RaccoonKnowledge = RaccoonKnowledgeList.Dunnit
         - else: 
             I'm getting to be quite frail. Whatever it is, I think it best that you deal with it." 
         }
+        ~ CakeKnowledge = CakeList.RaccoonIn
+        ~ RaccoonKnowledge = RaccoonKnowledgeList.Dunnit
+        ++-> Butler
+    * {CakeKnowledge == CakeList.RaccoonIn and Cake == CakeList.RaccoonIn and butler_who} ["The cake is squirming."] "The cake is squirming... Do you know what's going on?" 
+        "Hm... You are the detective here, not me. 
+        ~RaccoonKnowledge = RaccoonKnowledgeList.Dunnit
+        {butler_informed == true: 
+            ...Ah, you are suspecting it is our little interloper, are you not? Well, go on. I certainly won't stop you." 
+        - else: 
+            I'm getting to be quite frail. Whatever it is, I think it best that you deal with it." 
+        }
+        ~ RaccoonKnowledge = RaccoonKnowledgeList.Dunnit
         ++-> Butler
 
     
