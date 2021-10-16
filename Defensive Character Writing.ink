@@ -100,9 +100,9 @@ INCLUDE IntroRooms
     The countertops house a blender and microwave. A high-tech fridge gently hums away in the corner. 
         + [Investigate Blender]
             -> Blender
-        + {fridge_met}[Investigate Microwave]
+        + {blender_met}[Investigate Microwave]
             -> Microwave
-        + {blender_met}[Investigate Fridge]
+        + {microwave_met}[Investigate Fridge]
             -> Fridge
         + [Enter Dining Room] 
             -> DiningRoom
@@ -160,9 +160,9 @@ INCLUDE IntroRooms
     
 === function UpdateTime() ===
     {(Time%1 * 60) == 0:
-         ~ return (FLOOR(Time) + 4) + ":00 o' clock"
+         ~ return (FLOOR(Time) + 2) + ":00 o' clock"
     -else:
-         ~ return (FLOOR(Time) + 4) + ":" + (Time%1 * 60) + " o' clock"
+         ~ return (FLOOR(Time) + 2) + ":" + (Time%1 * 60) + " o' clock"
     }
 
 === function UpdateCake() ===
@@ -176,7 +176,7 @@ INCLUDE IntroRooms
     -(Time >= 2 and Time < 3):
         ~Cake = CakeList.Trail
         ~ return
-    -(Time >= 3 and Time < 6):
+    -(Time >= 3 and Time < 8):
         ~Cake = CakeList.RaccoonIn
         ~ return
 
