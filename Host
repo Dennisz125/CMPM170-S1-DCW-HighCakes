@@ -54,6 +54,11 @@
         Maximillian looks over to Mr. X, who is currently devouring a chicken leg.
         "We're in capable hands!"
         ++-> Talk
+        
+    *{Cake == CakeList.RaccoonIn and RaccoonKnowledge != RaccoonKnowledgeList.Dunnit} "Max! There's something inside the cake!"
+        Maximillian takes a step back, a look of terror on his face. "My God! The malevolent spirits here are trying to possess my beautiful cake! Necromancy!!"
+        <i>Hmm, I probably need to gather some more info before I can make any progress with him.</i>
+        ++-> Talk
 
     *{RaccoonKnowledge == RaccoonKnowledgeList.Dunnit and Cake != CakeList.RaccoonIn} "It seems a raccoon got in the house earlier, I believe this furry bandit may be the one who killed the cake."
         "Nonesense! Mr. X is more than just a capable exorcist, but also my exterminator. He's purged this home of spirit and pest alike! Oh no, my friend, I'll believe this ridiculous tale when I see it. A raccoon, <i>HA!</i>"
