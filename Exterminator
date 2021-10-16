@@ -33,7 +33,7 @@
     ~BPlot = BPlotList.FoundGhost
     ->Asking
 * {BPlot == BPlotList.FoundGhost && RaccoonKnowledge == RaccoonKnowledgeList.InHouse} "I know that it was a raccoon, not some spirit."
-    "I don't believe that a common raccoon could have commited sucha  heinous act! I found the ghost and I'll prove it to you!" He closes his eyes and begins muttering strange words under his breath.
+    "I don't believe that a common raccoon could have committed such a  heinous act! I found the ghost and I'll prove it to you!" He closes his eyes and begins muttering strange words under his breath.
     <i>Time to move on. I need to find this critter before he does.</i>
     
     ->Asking
