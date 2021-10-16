@@ -21,6 +21,7 @@ INCLUDE IntroRooms
     
     LIST CakeList = None, Some, Blood, Trail, RaccoonIn
     VAR Cake = CakeList.None
+    VAR CakeKnowledge = CakeList.Some
     
     VAR Time = 0
     //Todo: Function to convert time
@@ -186,14 +187,19 @@ INCLUDE IntroRooms
     {
         - Cake == CakeList.None:
             Cake is Full
+            ~ CakeKnowledge = CakeList.None
         - Cake == CakeList.Some:
             The once beautiful cake now stands without a head, chunks of frosting and strawberry filling still dripping from the wound.
+            ~ CakeKnowledge = CakeList.Some 
         - Cake == CakeList.Blood:
             Smears and splatters of the cake filling are all over the it and the pedestal, emenating from a messy hole where it's heart would be.
+            ~ CakeKnowledge = CakeList.Blood 
         - Cake == CakeList.Trail:
-            A trail of frosting and gooey filling leads away from the cake pedestal, leading to the kitchen door...
+            A trail of frosting and gooey filling leads away from the cake pedestal, leading to the kitchen door... 
+            ~ CakeKnowledge = CakeList.Trail 
         - Cake == CakeList.RaccoonIn:
             Watching the stomach of the headless cake squirm makes me nauseous. I need to get Max in here, quick.
+            ~ CakeKnowledge = CakeList.RaccoonIn 
     }
     ->Foyer
 
