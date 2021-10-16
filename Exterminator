@@ -24,6 +24,7 @@
 * {BPlot == BPlotList.Seance} "What's this about a seance?"
     "Remove all distractions… Lower the light.. Each of us should be able to concentrate…
     Feel roots growing from their feet..."
+    ~BPlot = BPlotList.Exorcist
     ->Asking
 * {BPlot == BPlotList.Exorcist} "Are you sure that all this nonesense is working?"
     "Be quiet! I feel spirits, I see spirits. I am surrounded by white light, I am lifting, my spirit is connected to all others.. The spirit world, I am ready for you!"
