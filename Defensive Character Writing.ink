@@ -92,6 +92,9 @@ INCLUDE IntroRooms
     ~Time += 0.25
     Time: {UpdateTime()} 
     {UpdateCake()}
+    {Time >= 4:
+        -> Failure
+    }
     The refined warmth of the kitchen is overshadowed by the stench of a crime. My unshakeable instincts tell me a clue awaits here, ready to reveal the identity of the culprit.  
     The countertops house a blender and microwave. A high-tech fridge gently hums away in the corner. 
         + [Investigate Blender]
@@ -114,6 +117,9 @@ INCLUDE IntroRooms
     ~Time += 0.25
     Time: {UpdateTime()} 
     {UpdateCake()}
+    {Time >= 4:
+        -> Failure
+    }
     After seeing what happened to that poor cake... I couldn't imagine having an appetite. The food laid out in this room makes me ill... at least for now. I'd better catch that culprit quick. 
     Max is here, and so is that 'specialist' of his, Mr. X... 
         + [Talk to Host]
@@ -130,6 +136,9 @@ INCLUDE IntroRooms
     ~Time += 0.25
     Time: {UpdateTime()} 
     {UpdateCake()}
+    {Time >= 4:
+        -> Failure
+    }
     The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. Delicious.
     The butler stands in the hall. 
     What remains of the cake lays on the pedestal. The scene is hidden behind the curtain, for Max's sanity. <i>Do I take a peek?</i>
@@ -169,8 +178,6 @@ INCLUDE IntroRooms
     -(Time >= 1.5 and Time < 4):
         ~Cake = CakeList.RaccoonIn
         ~ return
-    -(Time >= 4 ):
-        -> Failure
 
     }
 
