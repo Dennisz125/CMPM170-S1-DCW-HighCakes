@@ -1,7 +1,7 @@
 ===Exterminator===
 // --Intro--
 {not exterminator_met:
-        He has the kind of face that stops you in your tracks. He must get used to that, the sudden pause in a person's natural expression when they looked his way followed by overcompensating with a nonchalant gaze and a weak smile. It doesn't help that he is so proud of it - a mere thought about Mr. X is repulsive. He was ugly alright, but inside he was simply disgusting.
+        He has the kind of face that stops you in your tracks. He must get used to that, the sudden pause in a person's natural expression when they look his way followed by an overcompensating, nonchalant gaze and weak smile. It doesn't help that he is so proud of it -- a mere thought about Mr. X is repulsive. He was ugly alright, but inside he was simply disgusting.
             ~ exterminator_met = true
             ->Asking
     - else: 
@@ -11,31 +11,35 @@
 
 ===Asking===
 // --Who--
-* {not exterminator_who} [Who are you?]
-   " Who are you to ask? You are the miserable speck of dust, the little brown furry rotten rodent, the soiled soul, the muddy mugler! I am the one licensed to eliminate evel spirits by the government of the United Nations. A man, free to exorcise at will!"
+* {not exterminator_who} "Who are you?"
+   "Who are you to ask? You are the miserable speck of dust, the little brown furry rotten rodent, the soiled soul, the muddy mugler! I am licensed to eliminate evil spirits by the government of the United Nations. A man, free to exorcise at will!"
     ~exterminator_who = true
     ->Asking
 
 // --Finding the Ghost
 //None, Seance, Exorcist, Conclusion
-* {BPlot == BPlotList.None} [What do you think?]
+* {BPlot == BPlotList.None} "Max said this house needs... cleansing? What do you think?"
     "The house is haunted, I’m telling you! I know it in my gut!"
     ->Asking
-* {BPlot == BPlotList.Seance} [What's with the layout?]
+* {BPlot == BPlotList.Seance} "What's this about a seance?"
     "Remove all distractions… Lower the light.. Each of us should be able to concentrate…
     Feel roots growing from their feet..."
     ->Asking
-* {BPlot == BPlotList.Exorcist} [Are you sure that it's working]
+* {BPlot == BPlotList.Exorcist} "Are you sure that all this nonesense is working?"
     "Be quiet! I feel spirits, I see spirits. I am surrounded by white light, I am lifting, my spirit is connected to all others.. The spirit world, I am ready for you!"
+    ...
+    "There! I feel a presence through this wall!" Mr. X gestures frantically at the door to the kitchen.
     //Add bit about finding ghost
     ~BPlot = BPlotList.FoundGhost
     ->Asking
-* {BPlot == BPlotList.FoundGhost && RaccoonKnowledge != RaccoonKnowledgeList.InHouse} [I know that it was a raccoon]
-    "I don't believe you that a raccoon who did it. I found the ghost and I'll prove it to you!"
-    I need to find that raccoon is in the house.
+* {BPlot == BPlotList.FoundGhost && RaccoonKnowledge == RaccoonKnowledgeList.InHouse} "I know that it was a raccoon, not some spirit."
+    "I don't believe that a common raccoon could have commited sucha  heinous act! I found the ghost and I'll prove it to you!" He closes his eyes and begins muttering strange words under his breath.
+    <i>Time to move on. I need to find this critter before he does.</i>
+    
     ->Asking
- * {BPlot == BPlotList.FoundGhost && RaccoonKnowledge == RaccoonKnowledgeList.InHouse} [I know that it was a raccoon]
-    "Raccoon is the ghost!" As he said excitedly. 
+ * {BPlot == BPlotList.FoundGhost && RaccoonKnowledge == RaccoonKnowledgeList.Dunnit} "I have proof that it was a raccoon who committed our 'murder', let's drop the charade."
+    "A raccoon committing murder?! It must be here seeking revenge for the hundreds of its brethren I've slain!" Mr. X's eyes go wide with fear and paranoia. He scrambles back against the wall, clutching a plate of food close to him.
+    <i>At the very least he stopped his 'exorcism'...</i>
     ->Asking
     
 // 
@@ -53,7 +57,7 @@
 ->DiningRoom
 
 ===function GetExterminatorQuotes
-    ~return "{~What an excellent day for an exorcism.|What brings you to this nape of the woods, neck of the wape. How come you're here?|You got a lot of problems. You need help|There is nothing wrong with you, except in your mind|Do you tell me for a fact that an exorcism wouldn't do any good? You are SO wrong!|}"
+    ~return "{~What an excellent day for an exorcism.|What brings you to this nape of the woods, neck of the wape. How come you're here?|You got a lot of problems. You need help.|There is nothing wrong with you, except in your mind!|What are you trying to say? An exorcism wouldn't do any good? You are SO wrong!|}"
 
 ===ExterminatorReveal
 
