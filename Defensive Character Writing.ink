@@ -76,8 +76,8 @@ INCLUDE IntroRooms
     I trudge up the driveway of my childhood friend’s newly acquired mansion, my footsteps crunching against the hard gravel. A surprisingly familiar man dressed up in a tuxedo and top hat walks out to greet me, arms outstretched. 
     "Old sport, you've arrived! Come in, come in. I've an extravagant cake prepared, just for the occasion."
     <i>Maximillian?</i>
-    * [- skip intro (DEBUG) -] 
-        -> Foyer 
+    //* [- skip intro (DEBUG) -] 
+    //    -> Foyer 
     * ["Don't call me that."] "Don't call me that." 
         Maximilian smiles and shakes his head, muttering, "No promises, old friend." 
         ** ["Lovely place."] "Never mind that. Erm, you've done quite well for yourself. Lovely place. Say, whose truck is that outside?"
@@ -110,8 +110,8 @@ INCLUDE IntroRooms
             -> Foyer 
         // + [Open Notebook] 
         //     -> NoteBook ->
-        + [DEBUG]
-            -> DEBUG
+        //+ [DEBUG]
+        //    -> DEBUG
 
 
 === DiningRoom ===
@@ -129,8 +129,8 @@ INCLUDE IntroRooms
             -> Exterminator
         + [Kitchen]
             -> Kitchen
-        + [DEBUG]
-            -> DEBUG
+        //+ [DEBUG]
+        //    -> DEBUG
 
 
 === Foyer ===
@@ -149,8 +149,8 @@ INCLUDE IntroRooms
             -> ViewCake
         + [Enter Kitchen] 
             -> Kitchen 
-        + [DEBUG]
-            -> DEBUG
+        //+ [DEBUG]
+        //    -> DEBUG
 
 
 === NoteBook ===
