@@ -94,9 +94,9 @@ INCLUDE IntroRooms
     The countertops house a blender and microwave. A high-tech fridge gently hums away in the corner. 
         + [Investigate Blender]
             -> Blender
-        + [Investigate Microwave]
+        + {fridge_met}[Investigate Microwave]
             -> Microwave
-        + [Investigate Fridge]
+        + {blender_met}[Investigate Fridge]
             -> Fridge
         + [Enter Dining Room] 
             -> DiningRoom

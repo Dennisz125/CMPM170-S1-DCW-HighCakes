@@ -1,7 +1,8 @@
 ===Fridge===
     //first time vs return text
     {(not fridge_met):
-        I'm starting to get hungry from all this detective work. Cant think on an empty stomach. I reached towards the handle as the extorminator yells out "WAIT! I feel a prescence over there"
+        The trail from the blender leads across the tiles straight onto the fridge door. <i>Aha, a lead!</i>
+        I'm also starting to get hungry from all this detective work. Cant think on an empty stomach. I reached towards the handle as the extorminator yells out "WAIT! I feel a prescence over there"
         *[Hold on]
             I hear a mechanical clunks and clanks as the machine whirrs to live. I don't believe in ghosts but could the extorminator actually be right? The fridge shakes back and forth as the extorminator chants incantations in a tongue you haven't heard of. This could change everything I know about the material world. I could win awards! I could be the best detective in th-
             **[A female voice chimes in]
@@ -17,7 +18,6 @@
                     "I'm sorry," interrupted Athena. "I cannot give that information to you. I can however, to Master ___"
                     ****[What?]
                         "Master Maximilian has put you on my trusted members list. Whatever questions you have, I am at your service. How may I assist you?" 
-                        ~ fridge_met = true
                         *****[Sweet]->Fridge
     - else: 
         How else may I assist you?
@@ -69,7 +69,8 @@
         
         -> Fridge
     //Cake
-    * {Cake == CakeList.None} [What do you know about the cake?]
+    * [What do you know about the cake?]
+    
     
         -> Fridge
     //Exorcism
@@ -90,4 +91,12 @@
         -> Fridge
     
     + [Leave]
+        {(not fridge_met):
+            "Goodbye Athena, thanks for the help!"
+            As I'm turning around to leave, I feel myself slipping on something and catch myself just before I fall.
+            "This butler really isn't doing his job", I murmured to myself just before I noticed a trail leading to the microwave.
+            ~fridge_met = true
+        - else:
+            I headed back towards the kitchen
+        }
         ->Kitchen
