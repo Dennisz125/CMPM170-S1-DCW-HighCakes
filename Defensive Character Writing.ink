@@ -89,7 +89,7 @@ INCLUDE IntroRooms
                
 
 === Kitchen === 
-    ~Time += 0.25
+    ~Time += 0.12
     Time: {UpdateTime()} 
     {UpdateCake()}
     The refined warmth of the kitchen is overshadowed by the stench of a crime. My unshakeable instincts tell me a clue awaits here, ready to reveal the identity of the culprit.  
@@ -111,7 +111,7 @@ INCLUDE IntroRooms
 
 
 === DiningRoom ===
-    ~Time += 0.25
+    ~Time += 0.12
     Time: {UpdateTime()} 
     {UpdateCake()}
     After seeing what happened to that poor cake... I couldn't imagine having an appetite. The food laid out in this room makes me ill... at least for now. I'd better catch that culprit quick. 
@@ -127,7 +127,7 @@ INCLUDE IntroRooms
 
 
 === Foyer ===
-    ~Time += 0.25
+    ~Time += 0.12
     Time: {UpdateTime()} 
     {UpdateCake()}
     The once pristine velvet carpet is now stained with a blood-red strawberry filling, taken from this world far too soon... And quite a bit of vanilla frosting. I sample a taste from the mess, just to make sure. Delicious.
@@ -157,16 +157,16 @@ INCLUDE IntroRooms
 
 === function UpdateCake() ===
     {
-    -(Time >= 0.50):
+    -(Time >= 0.25):
         ~Cake = CakeList.Some
         ~ return
-    -(Time >= 1):
+    -(Time >= .5):
         ~Cake = CakeList.Blood
         ~ return
-    -(Time >= 1.5):
+    -(Time >= .75):
         ~Cake = CakeList.Trail
         ~ return
-    -(Time >= 2):
+    -(Time >= 1):
         ~Cake = CakeList.RaccoonIn
         ~ return
     }
@@ -199,7 +199,11 @@ INCLUDE IntroRooms
         I don’t give Maximillian any more chances to deny the truth. I give the rope a firm tug, pulling the curtains back to reveal the now thoroughly abused cake. Max gasps seeing the additional gore left by our furry friend.
         
         
-        *****************************
+        {BPlot == BPlotList.Conclusion:
+            I level a finger at Mr. X. “<i>THIS</i> man here is nothing more than a scam artist, maximilian, and it seems he isn’t even a very good exterminator, either. All this seance and exorcism hullabaloo has just been distracting you, gouging you for as much money Mr. X can manage. I’m sorry, old friend, but this place isn’t haunted. It’s just a big lonely house, and you’re being taken advantage of.”
+            Max looks deeply hurt by these words, refusing even to look at Mr. X who has a dumb, shocked look on his face. He sputters and stutters, but the butler puts a truly menacing hand on his shoulder, quieting him.
+            Our eyes return to the messy murder scene before us.
+            }
         
         
         The body of the cake warps and bulges, Max looks as if he’ll be sick, and Mr. X actually was sick on the once perfect red carpet. The butler groans and rolls his eyes.
