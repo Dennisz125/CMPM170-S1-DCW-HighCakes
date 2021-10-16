@@ -7,7 +7,7 @@ body {
 }
 
 body.dark {
-    background-image: url("/coffee_texture.png");
+    background-image: url("./coffee_texture.png");
     background: black;
     color: white;
 }
@@ -64,7 +64,7 @@ h3.written-in-ink {
 
 /* Seems necessary to make iframes work on itch.io on mobile iOS :-( */
 .outerContainer {
-    background-image: url("/coffee_texture.png");
+    background-image: url("./coffee_texture.png");
     position: absolute;
     display: block;
     margin: 20;
