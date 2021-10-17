@@ -2,6 +2,7 @@
 
 
 body {
+    font-family: Courier New, monospace
     font-weight: lighter;
     background: white;
 }
@@ -102,7 +103,7 @@ p {
 a {
     font-weight: 700;
     color: #771a02;
-    font-family: sans-serif;
+    font-family: Courier New, monospace
     transition: color 0.6s;
     text-decoration: none;
 }
