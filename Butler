@@ -74,7 +74,7 @@
         ++ -> Butler
     // some 
     * {CakeKnowledge == CakeList.Some and butler_who} ["It's a tragedy."] "It's a tragedy."
-        "I suppose... Were you expecting some elaboration? Very well. The cake had been created in Sir Maximilian's image. It truly was a sight to behold... And now?
+        "I suppose... Were you expecting some elaboration? Very well. The cake had been created in Sir Maximilian's image. It truly was a sight to behold... And now?" 
         The Butler's eyes fall to the knife in his hands, and the corners of his mouth twitch upwards in an odd grin. 
         "Why, there is nothing for this little instrument to <i>cut</i> into. And isn't that the real tragedy?" He holds the knife close to my face, allowing me to inspect its detail. He's right; it doesn't look recently used... But the murder didn't look like a clean cut anyway.  
         ++ -> Butler
