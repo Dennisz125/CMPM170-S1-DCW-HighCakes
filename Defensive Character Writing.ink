@@ -176,7 +176,7 @@ INCLUDE IntroRooms
     -(Time >= 2 and Time < 3):
         ~Cake = CakeList.Trail
         ~ return
-    -(Time >= 3 and Time < 8):
+    -(Time >= 3 and Time < 6):
         ~Cake = CakeList.RaccoonIn
         ~ return
 
